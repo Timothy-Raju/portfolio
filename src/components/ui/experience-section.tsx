@@ -184,7 +184,7 @@ export const ExperienceSection: React.FC = () => {
                   {/* Future Horizon Tag */}
                   <div className="inline-flex items-center gap-1.5 text-xs font-mono text-neutral-500 dark:text-neutral-400">
                     <Calendar className="w-3.5 h-3.5 text-[#5c7003] dark:text-[#C3E41D]" />
-                    <span>Incoming / Confirmed</span>
+                    <span>Incoming</span>
                   </div>
                 </div>
 
