@@ -3,6 +3,7 @@ import { AboutSection } from "@/components/ui/about-section";
 import { ProjectsSection } from "@/components/ui/projects-section";
 import { EducationSection } from "@/components/ui/education-section";
 import { ExperienceSection } from "@/components/ui/experience-section";
+import { SkillsSection } from "@/components/ui/skills-section";
 
 export default function Demo() {
   return (
@@ -17,6 +18,7 @@ export default function Demo() {
         <ProjectsSection />
         <EducationSection />
         <ExperienceSection />
+        <SkillsSection />
       </div>
     </>
   );
