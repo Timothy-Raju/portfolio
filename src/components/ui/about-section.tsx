@@ -167,16 +167,16 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
     <section
       id="about"
       aria-label="About Thimothi Raju"
-      className="relative w-full py-24 sm:py-32 bg-black text-white overflow-hidden border-t border-neutral-900 scroll-mt-20 sm:scroll-mt-24 selection:bg-[#C3E41D] selection:text-black"
+      className="relative w-full py-24 sm:py-32 bg-neutral-50 dark:bg-black text-neutral-900 dark:text-white overflow-hidden border-t border-neutral-200 dark:border-neutral-900 scroll-mt-20 sm:scroll-mt-24 selection:bg-[#C3E41D] selection:text-black transition-colors duration-300"
     >
       {/* Subtle ambient background glow */}
       <div
-        className="pointer-events-none absolute -top-40 right-0 w-[500px] h-[500px] rounded-full blur-[140px] opacity-10"
+        className="pointer-events-none absolute -top-40 right-0 w-[500px] h-[500px] rounded-full blur-[140px] opacity-15 dark:opacity-10"
         style={{ backgroundColor: "#C3E41D" }}
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute bottom-0 left-[-100px] w-[450px] h-[450px] rounded-full blur-[160px] opacity-10"
+        className="pointer-events-none absolute bottom-0 left-[-100px] w-[450px] h-[450px] rounded-full blur-[160px] opacity-15 dark:opacity-10"
         style={{ backgroundColor: "#C3E41D" }}
         aria-hidden="true"
       />
@@ -184,20 +184,20 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Tag */}
         <TimelineContent animationNum={1} className="mb-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-800 bg-neutral-950/80 backdrop-blur-sm text-xs font-mono uppercase tracking-widest text-[#C3E41D]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C3E41D] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-300 dark:border-neutral-800 bg-white/90 dark:bg-neutral-950/80 backdrop-blur-sm text-xs font-mono uppercase tracking-widest text-[#5c7003] dark:text-[#C3E41D] shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#5c7003] dark:bg-[#C3E41D] animate-pulse" />
             WHO I AM
           </div>
         </TimelineContent>
 
         {/* Main Heading with Vertical-Cut Reveal */}
         <div className="mb-14 sm:mb-20 max-w-4xl">
-          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08]">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-neutral-950 dark:text-white leading-[1.08]">
             <VerticalCutReveal
               splitBy="words"
               staggerDelay={0.08}
               staggerDuration={0.05}
-              className="text-white hover:text-[#C3E41D] transition-colors duration-300"
+              className="text-neutral-950 dark:text-white hover:text-[#5c7003] dark:hover:text-[#C3E41D] transition-colors duration-300"
             >
               Turning Ideas Into Useful Software.
             </VerticalCutReveal>
@@ -210,14 +210,14 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
           <div className="lg:col-span-7 space-y-10">
             {/* Introduction Paragraphs */}
             <TimelineContent animationNum={2} className="space-y-5">
-              <p className="text-lg sm:text-xl text-neutral-300 font-sans leading-relaxed">
+              <p className="text-lg sm:text-xl text-neutral-700 dark:text-neutral-300 font-sans leading-relaxed">
                 I'm a Computer Science Engineering student who enjoys turning ideas into
                 practical software solutions. I like exploring new technologies, experimenting
                 with code, and building projects that solve real problems. My interests span
                 full-stack development, developer productivity, automation, and AI-powered
                 applications.
               </p>
-              <p className="text-base sm:text-lg text-neutral-400 font-sans leading-relaxed">
+              <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 font-sans leading-relaxed">
                 I believe the best way to learn technology is by building with it. Through
                 personal projects and hands-on experimentation, I continue to strengthen my
                 technical skills, explore new ideas, and improve as a software developer.
@@ -229,11 +229,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
               <TimelineContent animationNum={3}>
                 <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-2">
                   {/* Stat 1: CGPA */}
-                  <div className="group relative rounded-2xl border border-neutral-800/90 bg-neutral-950/70 p-6 sm:p-7 backdrop-blur-md transition-all duration-300 hover:border-[#C3E41D]/50 hover:bg-neutral-900/50">
-                    <div className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold text-[#C3E41D] tracking-tight">
+                  <div className="group relative rounded-2xl border border-neutral-200 dark:border-neutral-800/90 bg-white/80 dark:bg-neutral-950/70 p-6 sm:p-7 backdrop-blur-md shadow-sm dark:shadow-none transition-all duration-300 hover:border-[#5c7003]/40 dark:hover:border-[#C3E41D]/50 hover:bg-neutral-100/60 dark:hover:bg-neutral-900/50">
+                    <div className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold text-[#5c7003] dark:text-[#C3E41D] tracking-tight">
                       {cgpaValue}
                     </div>
-                    <div className="mt-2 text-xs sm:text-sm font-mono uppercase tracking-wider text-neutral-400 group-hover:text-neutral-200 transition-colors">
+                    <div className="mt-2 text-xs sm:text-sm font-mono uppercase tracking-wider text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-200 transition-colors">
                       CGPA
                     </div>
                     <div className="mt-1 text-[11px] text-neutral-500 font-sans">
@@ -242,11 +242,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                   </div>
 
                   {/* Stat 2: Projects */}
-                  <div className="group relative rounded-2xl border border-neutral-800/90 bg-neutral-950/70 p-6 sm:p-7 backdrop-blur-md transition-all duration-300 hover:border-[#C3E41D]/50 hover:bg-neutral-900/50">
-                    <div className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold text-[#C3E41D] tracking-tight">
+                  <div className="group relative rounded-2xl border border-neutral-200 dark:border-neutral-800/90 bg-white/80 dark:bg-neutral-950/70 p-6 sm:p-7 backdrop-blur-md shadow-sm dark:shadow-none transition-all duration-300 hover:border-[#5c7003]/40 dark:hover:border-[#C3E41D]/50 hover:bg-neutral-100/60 dark:hover:bg-neutral-900/50">
+                    <div className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold text-[#5c7003] dark:text-[#C3E41D] tracking-tight">
                       {projectsValue}+
                     </div>
-                    <div className="mt-2 text-xs sm:text-sm font-mono uppercase tracking-wider text-neutral-400 group-hover:text-neutral-200 transition-colors">
+                    <div className="mt-2 text-xs sm:text-sm font-mono uppercase tracking-wider text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-200 transition-colors">
                       Projects
                     </div>
                     <div className="mt-1 text-[11px] text-neutral-500 font-sans">
@@ -259,24 +259,24 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 
             {/* Contact Call to Action */}
             <TimelineContent animationNum={4} className="pt-2">
-              <div className="p-6 rounded-2xl border border-neutral-800/80 bg-neutral-950/60 backdrop-blur-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800/80 bg-white/80 dark:bg-neutral-950/60 shadow-sm dark:shadow-none backdrop-blur-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-colors duration-300">
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-widest text-neutral-400 mb-1">
+                  <div className="text-xs font-mono uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-1">
                     Have an idea or want to collaborate?
                   </div>
                   <a
                     href="mailto:rajupalanki1037@gmail.com"
-                    className="text-base sm:text-lg font-medium text-white hover:text-[#C3E41D] transition-colors inline-flex items-center gap-2 group"
+                    className="text-base sm:text-lg font-medium text-neutral-900 dark:text-white hover:text-[#5c7003] dark:hover:text-[#C3E41D] transition-colors inline-flex items-center gap-2 group"
                   >
-                    <Mail className="w-4 h-4 text-[#C3E41D]" />
+                    <Mail className="w-4 h-4 text-[#5c7003] dark:text-[#C3E41D]" />
                     <span>rajupalanki1037@gmail.com</span>
-                    <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-[#C3E41D] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    <ArrowUpRight className="w-4 h-4 text-neutral-400 dark:text-neutral-500 group-hover:text-[#5c7003] dark:group-hover:text-[#C3E41D] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </a>
                 </div>
 
                 <a
                   href="mailto:rajupalanki1037@gmail.com"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-mono text-xs uppercase tracking-wider font-bold bg-[#C3E41D] text-black hover:bg-[#d4f336] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_20px_rgba(195,228,29,0.25)] shrink-0"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-mono text-xs uppercase tracking-wider font-bold bg-[#C3E41D] text-black hover:bg-[#b5d613] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_4px_20px_rgba(195,228,29,0.35)] shrink-0"
                 >
                   LET'S CONNECT
                   <ArrowUpRight className="w-4 h-4" />
@@ -288,13 +288,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
           {/* Right Column: Compact Identity Card & Social Links (5 cols) */}
           <div className="lg:col-span-5">
             <TimelineContent animationNum={3}>
-              <div className="relative rounded-3xl border border-neutral-800 bg-neutral-950/80 backdrop-blur-xl p-6 sm:p-8 shadow-2xl hover:border-neutral-700 transition-all duration-300">
+              <div className="relative rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white/90 dark:bg-neutral-950/80 backdrop-blur-xl p-6 sm:p-8 shadow-xl dark:shadow-2xl hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300">
                 {/* Visual Top Bar Accent */}
-                <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#C3E41D]/40 to-transparent" />
+                <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#C3E41D] dark:via-[#C3E41D]/40 to-transparent" />
 
                 {/* Profile Portrait & Mask Composition */}
-                <div className="flex items-center gap-5 sm:gap-6 pb-6 border-b border-neutral-900">
-                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-2 border-[#C3E41D]/40 bg-neutral-900 shrink-0 shadow-lg group">
+                <div className="flex items-center gap-5 sm:gap-6 pb-6 border-b border-neutral-200 dark:border-neutral-900">
+                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-2 border-[#5c7003]/40 dark:border-[#C3E41D]/40 bg-neutral-100 dark:bg-neutral-900 shrink-0 shadow-lg group">
                     <img
                       src={avatarUrl}
                       alt="Thimothi Raju portrait"
@@ -313,44 +313,46 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                   </div>
 
                   <div>
-                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#C3E41D]/10 border border-[#C3E41D]/20 text-[10px] font-mono uppercase tracking-wider text-[#C3E41D] mb-1.5">
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#C3E41D]/20 dark:bg-[#C3E41D]/10 border border-[#C3E41D]/50 dark:border-[#C3E41D]/20 text-[10px] font-mono uppercase tracking-wider text-[#495902] dark:text-[#C3E41D] mb-1.5">
                       <Sparkles className="w-3 h-3" /> Developer Profile
                     </div>
                     <h3
-                      className="text-xl sm:text-2xl font-bold tracking-tight text-white uppercase"
+                      className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-950 dark:text-white uppercase"
                       style={{ fontFamily: "'Fira Code', monospace" }}
                     >
                       THIMOTHI RAJU
                     </h3>
-                    <p className="text-xs sm:text-sm text-neutral-400 mt-0.5">
+                    <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-0.5">
                       Computer Science Engineering Student
                     </p>
                   </div>
                 </div>
 
                 {/* Academic & Location Metadata */}
-                <div className="py-6 space-y-3.5 border-b border-neutral-900 text-sm">
-                  <div className="flex items-center gap-3 text-neutral-300">
-                    <div className="w-8 h-8 rounded-lg bg-neutral-900 flex items-center justify-center text-[#C3E41D] shrink-0 border border-neutral-800">
+                <div className="py-6 space-y-3.5 border-b border-neutral-200 dark:border-neutral-900 text-sm">
+                  <div className="flex items-center gap-3 text-neutral-700 dark:text-neutral-300">
+                    <div className="w-8 h-8 rounded-lg bg-neutral-100 dark:bg-neutral-900 flex items-center justify-center text-[#5c7003] dark:text-[#C3E41D] shrink-0 border border-neutral-200 dark:border-neutral-800">
                       <GraduationCap className="w-4 h-4" />
                     </div>
                     <div>
                       <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider">
                         University
                       </div>
-                      <div className="font-medium text-white">VIT-AP University</div>
+                      <div className="font-medium text-neutral-950 dark:text-white">
+                        VIT-AP University
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3 text-neutral-300">
-                    <div className="w-8 h-8 rounded-lg bg-neutral-900 flex items-center justify-center text-[#C3E41D] shrink-0 border border-neutral-800">
+                  <div className="flex items-center gap-3 text-neutral-700 dark:text-neutral-300">
+                    <div className="w-8 h-8 rounded-lg bg-neutral-100 dark:bg-neutral-900 flex items-center justify-center text-[#5c7003] dark:text-[#C3E41D] shrink-0 border border-neutral-200 dark:border-neutral-800">
                       <MapPin className="w-4 h-4" />
                     </div>
                     <div>
                       <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider">
                         Location
                       </div>
-                      <div className="font-medium text-white">
+                      <div className="font-medium text-neutral-950 dark:text-white">
                         Palakol, Andhra Pradesh, India
                       </div>
                     </div>
@@ -358,16 +360,16 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 </div>
 
                 {/* Primary Interests / Focus Labels */}
-                <div className="py-6 border-b border-neutral-900">
-                  <div className="text-xs font-mono uppercase tracking-widest text-neutral-400 mb-3 flex items-center gap-2">
-                    <Code2 className="w-3.5 h-3.5 text-[#C3E41D]" />
+                <div className="py-6 border-b border-neutral-200 dark:border-neutral-900">
+                  <div className="text-xs font-mono uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-3 flex items-center gap-2">
+                    <Code2 className="w-3.5 h-3.5 text-[#5c7003] dark:text-[#C3E41D]" />
                     <span>Focus Interests</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {focusLabels.map((interest) => (
                       <span
                         key={interest}
-                        className="px-3 py-1.5 rounded-lg text-xs font-mono bg-neutral-900/90 text-neutral-300 border border-neutral-800 hover:border-[#C3E41D]/40 hover:text-white transition-all cursor-default"
+                        className="px-3 py-1.5 rounded-lg text-xs font-mono bg-neutral-100 dark:bg-neutral-900/90 text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-800 hover:border-[#5c7003]/40 dark:hover:border-[#C3E41D]/40 hover:text-neutral-950 dark:hover:text-white transition-all cursor-default"
                       >
                         {interest}
                       </span>
@@ -377,7 +379,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 
                 {/* Social Links */}
                 <div className="pt-6">
-                  <div className="text-xs font-mono uppercase tracking-widest text-neutral-400 mb-3.5">
+                  <div className="text-xs font-mono uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-3.5">
                     Connect With Me
                   </div>
                   <div className="grid grid-cols-2 gap-2.5">
@@ -390,13 +392,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={`Visit Thimothi Raju on ${social.name}`}
-                          className="flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-neutral-800/80 bg-neutral-900/60 hover:bg-neutral-900 hover:border-[#C3E41D]/50 text-neutral-300 hover:text-white transition-all group"
+                          className="flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800/80 bg-neutral-100/70 dark:bg-neutral-900/60 hover:bg-neutral-200/60 dark:hover:bg-neutral-900 hover:border-[#5c7003]/40 dark:hover:border-[#C3E41D]/50 text-neutral-700 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white transition-all group"
                         >
                           <div className="flex items-center gap-2.5">
-                            <Icon className="w-4 h-4 text-neutral-400 group-hover:text-[#C3E41D] transition-colors" />
+                            <Icon className="w-4 h-4 text-neutral-500 dark:text-neutral-400 group-hover:text-[#5c7003] dark:group-hover:text-[#C3E41D] transition-colors" />
                             <span className="text-xs font-medium">{social.name}</span>
                           </div>
-                          <ExternalLink className="w-3 h-3 text-neutral-600 group-hover:text-[#C3E41D] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                          <ExternalLink className="w-3 h-3 text-neutral-400 dark:text-neutral-600 group-hover:text-[#5c7003] dark:group-hover:text-[#C3E41D] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                         </a>
                       );
                     })}
