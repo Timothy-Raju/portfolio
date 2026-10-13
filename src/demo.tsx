@@ -1,6 +1,7 @@
 import Component from "@/components/ui/portfolio-hero";
 import { AboutSection } from "@/components/ui/about-section";
 import { ProjectsSection } from "@/components/ui/projects-section";
+import { EducationSection } from "@/components/ui/education-section";
 
 export default function Demo() {
   return (
@@ -13,6 +14,7 @@ export default function Demo() {
         <Component />
         <AboutSection />
         <ProjectsSection />
+        <EducationSection />
       </div>
     </>
   );
