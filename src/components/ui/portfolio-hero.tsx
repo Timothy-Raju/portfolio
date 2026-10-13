@@ -68,12 +68,13 @@ export const BlurText: React.FC<BlurTextProps> = ({
       {segments.map((segment, i) => (
         <span
           key={i}
+          className="transition-colors duration-300"
           style={{
             display: "inline-block",
             filter: inView ? "blur(0px)" : "blur(10px)",
             opacity: inView ? 1 : 0,
             transform: inView ? "translateY(0)" : `translateY(${direction === "top" ? "-20px" : "20px"})`,
-            transition: `all 0.5s ease-out ${i * delay}ms`,
+            transition: `filter 0.5s ease-out ${i * delay}ms, opacity 0.5s ease-out ${i * delay}ms, transform 0.5s ease-out ${i * delay}ms, color 0.3s ease`,
           }}
         >
           {segment}
@@ -146,7 +147,7 @@ export default function Component({
   };
 
   return (
-    <div
+    <div 
       className="min-h-screen text-foreground transition-colors relative overflow-hidden select-none"
       style={{
         backgroundColor: isDark ? "hsl(0 0% 0%)" : "hsl(0 0% 98%)",
@@ -161,7 +162,11 @@ export default function Component({
             <button
               ref={buttonRef}
               type="button"
-              className="p-2 transition-colors duration-300 z-50 text-neutral-500 hover:text-black dark:hover:text-white cursor-pointer"
+              className={`p-2 transition-colors duration-300 z-50 cursor-pointer ${
+                isDark 
+                  ? "text-neutral-400 hover:text-white" 
+                  : "text-neutral-500 hover:text-black"
+              }`}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -204,11 +209,11 @@ export default function Component({
           </div>
 
           {/* Signature */}
-          <div
-            className="text-4xl font-serif tracking-wider font-semibold"
-            style={{
-              color: isDark ? "hsl(0 0% 100%)" : "hsl(0 0% 10%)",
-              fontFamily: "'Brush Script MT', 'Lucida Handwriting', cursive, sans-serif"
+          <div 
+            className="text-4xl font-serif tracking-wider font-semibold" 
+            style={{ 
+              color: isDark ? "hsl(0 0% 100%)" : "hsl(0 0% 10%)", 
+              fontFamily: "'Brush Script MT', 'Lucida Handwriting', cursive, sans-serif" 
             }}
           >
             {signature}
@@ -235,9 +240,10 @@ export default function Component({
 
       {/* Hero Section */}
       <main className="relative min-h-screen flex flex-col justify-center items-center">
-        {/* Centered Main Name - Always Perfectly Centered */}
+        {/* Centered Main Name & Overlapping Image + Overlapping Blur Tagline */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-4">
           <div className="relative text-center">
+            {/* First Name */}
             <div>
               <BlurText
                 text={firstName}
@@ -248,6 +254,8 @@ export default function Component({
                 style={{ color: "#C3E41D", fontFamily: "'Fira Code', monospace" }}
               />
             </div>
+
+            {/* Second Name */}
             <div>
               <BlurText
                 text={lastName}
@@ -259,8 +267,8 @@ export default function Component({
               />
             </div>
 
-            {/* Profile Picture */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            {/* Profile Picture - exact original size and styles preserved */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-auto">
               <div className="w-[65px] h-[110px] sm:w-[90px] sm:h-[152px] md:w-[110px] md:h-[185px] lg:w-[130px] lg:h-[220px] rounded-full overflow-hidden shadow-2xl border-2 border-[#C3E41D]/30 transition-transform duration-300 hover:scale-110 cursor-pointer bg-neutral-900">
                 <img
                   src={avatarUrl}
@@ -274,20 +282,24 @@ export default function Component({
                 />
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* Tagline - Proper Distance Below Hero */}
-        <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-28 xl:bottom-32 left-1/2 -translate-x-1/2 w-full px-6">
-          <div className="flex justify-center">
-            <BlurText
-              text={tagline}
-              delay={120}
-              animateBy="words"
-              direction="top"
-              className="text-[15px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-center transition-colors duration-300 text-neutral-400 hover:text-black dark:hover:text-white"
-              style={{ fontFamily: "'Antic', sans-serif" }}
-            />
+            {/* Tagline Overlapping the Second Line & Image Container */}
+            <div className="absolute top-[68%] sm:top-[70%] left-1/2 -translate-x-1/2 z-20 pointer-events-auto w-full px-4">
+              <div className="flex justify-center">
+                <BlurText
+                  text={tagline}
+                  delay={120}
+                  animateBy="words"
+                  direction="top"
+                  className={`text-[15px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-center transition-colors duration-300 cursor-default ${
+                    isDark
+                      ? "text-neutral-400 hover:text-white"
+                      : "text-neutral-500 hover:text-black"
+                  }`}
+                  style={{ fontFamily: "'Antic', sans-serif" }}
+                />
+              </div>
+            </div>
           </div>
         </div>
 
@@ -300,7 +312,13 @@ export default function Component({
           className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 transition-colors duration-300 cursor-pointer animate-bounce"
           aria-label="Scroll down"
         >
-          <ChevronDown className="w-5 h-5 md:w-8 md:h-8 text-neutral-500 hover:text-[#C3E41D] dark:hover:text-[#C3E41D] transition-colors duration-300" />
+          <ChevronDown 
+            className={`w-5 h-5 md:w-8 md:h-8 transition-colors duration-300 ${
+              isDark 
+                ? "text-neutral-400 hover:text-[#C3E41D]" 
+                : "text-neutral-500 hover:text-[#C3E41D]"
+            }`} 
+          />
         </button>
       </main>
     </div>
