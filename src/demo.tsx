@@ -1,4 +1,5 @@
 import Component from "@/components/ui/portfolio-hero";
+import { AboutSection } from "@/components/ui/about-section";
 
 export default function Demo() {
   return (
@@ -9,6 +10,7 @@ export default function Demo() {
       />
       <div className="w-full">
         <Component />
+        <AboutSection />
       </div>
     </>
   );
