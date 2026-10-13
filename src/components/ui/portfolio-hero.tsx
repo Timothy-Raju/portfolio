@@ -104,9 +104,9 @@ export default function Component({
     { label: "HOME", href: "#", highlight: true },
     { label: "ABOUT", href: "#about" },
     { label: "PROJECTS", href: "#projects" },
-    { label: "EXPERIENCE", href: "#experience" },
     { label: "EDUCATION", href: "#education" },
-    { label: "WRITING", href: "#writing" },
+    { label: "EXPERIENCE", href: "#experience" },
+    { label: "SKILLS", href: "#skills" },
     { label: "CONTACT", href: "#contact" },
   ],
 }: PortfolioHeroProps) {
