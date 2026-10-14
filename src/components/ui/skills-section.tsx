@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Code2,
   Globe,
@@ -11,6 +11,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { TimelineContent } from "./timeline-content";
+import { SkillIcon, SKILLS_DATA } from "./skill-icons";
 
 interface SkillItem {
   name: string;
@@ -144,6 +145,8 @@ const MARQUEE_SKILLS: string[] = [
 ];
 
 export const SkillsSection: React.FC = () => {
+  const [hoveredSkillKey, setHoveredSkillKey] = useState<string | null>(null);
+
   return (
     <section
       id="skills"
@@ -176,7 +179,7 @@ export const SkillsSection: React.FC = () => {
 
           <TimelineContent animationNum={2} className="max-w-sm">
             <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 font-sans leading-relaxed">
-              Tools and technologies I use to build, analyze, and solve problems.
+              Interactive technical toolkit with authentic developer logos. Hover over any technology to explore.
             </p>
           </TimelineContent>
         </div>
@@ -195,10 +198,10 @@ export const SkillsSection: React.FC = () => {
               >
                 <div
                   tabIndex={0}
-                  className={`group relative h-full rounded-3xl p-6 sm:p-7 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C3E41D] bg-neutral-50/80 dark:bg-neutral-900/60 backdrop-blur-xl border border-neutral-200/80 dark:border-neutral-800/80 hover:border-[#5c7003]/40 dark:hover:border-[#C3E41D]/40 hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-[0_12px_30px_rgba(0,0,0,0.5)] flex flex-col justify-between overflow-hidden`}
+                  className="group relative h-full rounded-3xl p-6 sm:p-7 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C3E41D] bg-neutral-50/80 dark:bg-neutral-900/60 backdrop-blur-xl border border-neutral-200/80 dark:border-neutral-800/80 hover:border-[#5c7003]/40 dark:hover:border-[#C3E41D]/40 hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-[0_12px_30px_rgba(0,0,0,0.5)] flex flex-col justify-between"
                 >
                   {/* Subtle Top Border Glow on Hover */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#5c7003]/30 dark:via-[#C3E41D]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute top-0 left-0 right-0 h-1 rounded-t-3xl bg-gradient-to-r from-transparent via-[#5c7003]/30 dark:via-[#C3E41D]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   <div>
                     {/* Header Row: Icon + Category Title */}
@@ -213,52 +216,96 @@ export const SkillsSection: React.FC = () => {
                           </h3>
                         </div>
                       </div>
-
-                      {/* Count Badge */}
-                      <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-neutral-200/70 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-400 border border-neutral-300/60 dark:border-neutral-700/60">
-                        {category.skills.length} skills
-                      </span>
                     </div>
 
                     {/* Category Short Description */}
                     {category.description && (
-                      <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 font-sans mb-5 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 font-sans mb-6 leading-relaxed">
                         {category.description}
                       </p>
                     )}
                   </div>
 
-                  {/* Skills Badges / Chips */}
+                  {/* Skills Logo Grid with Interactive Tooltips */}
                   <div
                     className={
                       isFeatured
-                        ? "flex flex-wrap gap-2.5 pt-2"
-                        : "flex flex-wrap gap-2 pt-2"
+                        ? "flex flex-wrap items-center gap-3.5 pt-3"
+                        : "flex flex-wrap items-center gap-3 pt-3"
                     }
                   >
-                    {category.skills.map((skill) => (
-                      <div
-                        key={skill.name}
-                        className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 border ${
-                          isFeatured
-                            ? "bg-white dark:bg-neutral-950/80 border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 hover:border-[#5c7003] dark:hover:border-[#C3E41D] hover:shadow-sm"
-                            : "bg-white/90 dark:bg-neutral-950/70 border-neutral-200/90 dark:border-neutral-800/90 text-neutral-800 dark:text-neutral-200 hover:border-[#5c7003] dark:hover:border-[#C3E41D] hover:shadow-sm"
-                        }`}
-                      >
-                        <span>{skill.name}</span>
-                        {skill.badge && (
-                          <span
-                            className={`text-[10px] font-mono px-2 py-0.5 rounded-md font-semibold ${
-                              skill.badgeType === "accent"
-                                ? "bg-[#C3E41D]/25 dark:bg-[#C3E41D]/20 text-[#495902] dark:text-[#C3E41D] border border-[#C3E41D]/40"
-                                : "bg-neutral-200/70 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400"
+                    {category.skills.map((skill) => {
+                      const itemKey = `card-${category.id}-${skill.name}`;
+                      const isHovered = hoveredSkillKey === itemKey;
+                      const meta = SKILLS_DATA[skill.name];
+                      const brandColor = meta?.brandColor || "#C3E41D";
+
+                      return (
+                        <div
+                          key={skill.name}
+                          tabIndex={0}
+                          aria-label={`${skill.name}${skill.badge ? ` - ${skill.badge}` : ""}`}
+                          onMouseEnter={() => setHoveredSkillKey(itemKey)}
+                          onMouseLeave={() => setHoveredSkillKey(null)}
+                          onFocus={() => setHoveredSkillKey(itemKey)}
+                          onBlur={() => setHoveredSkillKey(null)}
+                          style={{
+                            boxShadow: isHovered
+                              ? `0 10px 24px ${brandColor}33, 0 0 14px ${brandColor}22`
+                              : undefined,
+                            borderColor: isHovered ? brandColor : undefined,
+                          }}
+                          className={`skill-tile ${isHovered ? "is-hovered" : ""} flex items-center justify-center rounded-2xl cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C3E41D] ${
+                            isFeatured
+                              ? "w-14 h-14 sm:w-16 sm:h-16 p-3 bg-white dark:bg-neutral-950/80 border border-neutral-200 dark:border-neutral-800 shadow-sm"
+                              : "w-13 h-13 sm:w-14 sm:h-14 p-2.5 bg-white/95 dark:bg-neutral-950/70 border border-neutral-200/90 dark:border-neutral-800/90 shadow-sm"
+                          }`}
+                        >
+                          {/* Special Skill Badge Pip Indicator */}
+                          {skill.badge && (
+                            <span
+                              className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-[#C3E41D] shadow-[0_0_8px_#C3E41D]"
+                              title={skill.badge}
+                            />
+                          )}
+
+                          {/* Authentic Logo Icon */}
+                          <SkillIcon
+                            name={skill.name}
+                            className={`transition-transform duration-300 ${
+                              isFeatured ? "w-8 h-8 sm:w-9 sm:h-9" : "w-7 h-7 sm:w-8 sm:h-8"
                             }`}
+                          />
+
+                          {/* Floating Tooltip */}
+                          <div
+                            role="tooltip"
+                            className="skill-tooltip flex flex-col items-center"
                           >
-                            {skill.badge}
-                          </span>
-                        )}
-                      </div>
-                    ))}
+                            <div className="bg-neutral-950/95 dark:bg-neutral-900/95 text-white border border-neutral-700/80 dark:border-neutral-700 shadow-2xl backdrop-blur-md rounded-xl px-3.5 py-2 text-center whitespace-nowrap min-w-[90px]">
+                              <div className="text-xs font-bold text-neutral-100 tracking-wide flex items-center justify-center gap-1.5">
+                                <span
+                                  className="w-2 h-2 rounded-full shrink-0"
+                                  style={{ backgroundColor: brandColor }}
+                                />
+                                <span>{skill.name}</span>
+                              </div>
+                              {skill.badge ? (
+                                <div className="mt-1 text-[10px] font-mono px-2 py-0.5 rounded-md font-semibold bg-[#C3E41D]/20 text-[#C3E41D] border border-[#C3E41D]/40">
+                                  {skill.badge}
+                                </div>
+                              ) : (
+                                <div className="mt-0.5 text-[10px] font-mono text-neutral-400">
+                                  {meta?.category || "Technology"}
+                                </div>
+                              )}
+                            </div>
+                            {/* Downward triangle arrow */}
+                            <div className="w-2 h-2 rotate-45 -mt-1 bg-neutral-950/95 dark:bg-neutral-900/95 border-r border-b border-neutral-700/80 dark:border-neutral-700" />
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </TimelineContent>
@@ -272,16 +319,16 @@ export const SkillsSection: React.FC = () => {
         <TimelineContent animationNum={6}>
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
             <span className="w-1.5 h-1.5 rounded-full bg-[#5c7003] dark:bg-[#C3E41D]" />
-            <span>Continuous Stack Overview</span>
+            <span>Continuous Stack Overview • Interactive Logo Stream</span>
             <ArrowRight className="w-3.5 h-3.5 text-[#5c7003] dark:text-[#C3E41D]" />
           </div>
         </TimelineContent>
       </div>
 
-      {/* Full-width Left-moving Skills Marquee */}
+      {/* Full-width Left-moving Skills Marquee with Interactive Logos & Tooltips */}
       <TimelineContent animationNum={7} className="w-full">
         <div
-          className="relative w-full overflow-hidden py-4 sm:py-5 border-y border-neutral-200 dark:border-neutral-800/80 bg-neutral-100/50 dark:bg-neutral-950/40 backdrop-blur-sm group"
+          className="relative w-full overflow-hidden py-12 sm:py-16 border-y border-neutral-200 dark:border-neutral-800/80 bg-neutral-100/50 dark:bg-neutral-950/40 backdrop-blur-sm group"
           style={{
             maskImage:
               "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
@@ -293,15 +340,58 @@ export const SkillsSection: React.FC = () => {
           <div className="animate-marquee-track">
             {/* Primary Skill Sequence */}
             <div className="flex items-center gap-4 sm:gap-6 pr-4 sm:pr-6 shrink-0">
-              {MARQUEE_SKILLS.map((skill, idx) => (
-                <div
-                  key={`marquee-orig-${idx}`}
-                  className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200/90 dark:border-neutral-800 text-xs sm:text-sm font-medium text-neutral-800 dark:text-neutral-200 shadow-sm transition-colors duration-200 hover:border-[#5c7003] dark:hover:border-[#C3E41D] hover:text-[#5c7003] dark:hover:text-[#C3E41D]"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#5c7003] dark:bg-[#C3E41D] opacity-80" />
-                  <span>{skill}</span>
-                </div>
-              ))}
+              {MARQUEE_SKILLS.map((skill, idx) => {
+                const itemKey = `mq-orig-${idx}-${skill}`;
+                const isHovered = hoveredSkillKey === itemKey;
+                const meta = SKILLS_DATA[skill];
+                const brandColor = meta?.brandColor || "#C3E41D";
+
+                return (
+                  <div
+                    key={itemKey}
+                    tabIndex={0}
+                    aria-label={skill}
+                    onMouseEnter={() => setHoveredSkillKey(itemKey)}
+                    onMouseLeave={() => setHoveredSkillKey(null)}
+                    onFocus={() => setHoveredSkillKey(itemKey)}
+                    onBlur={() => setHoveredSkillKey(null)}
+                    style={{
+                      boxShadow: isHovered
+                        ? `0 12px 28px ${brandColor}38, 0 0 16px ${brandColor}28`
+                        : undefined,
+                      borderColor: isHovered ? brandColor : undefined,
+                    }}
+                    className={`skill-tile ${isHovered ? "is-hovered" : ""} flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/95 dark:bg-neutral-900/95 border border-neutral-200/90 dark:border-neutral-800 shadow-sm cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C3E41D]`}
+                  >
+                    {/* Official Tech Logo */}
+                    <SkillIcon
+                      name={skill}
+                      className="w-7 h-7 sm:w-8 sm:h-8 transition-transform duration-300"
+                    />
+
+                    {/* Floating Tooltip */}
+                    <div
+                      role="tooltip"
+                      className="skill-tooltip flex flex-col items-center"
+                    >
+                      <div className="bg-neutral-950/95 dark:bg-neutral-900/95 text-white border border-neutral-700/80 dark:border-neutral-700 shadow-2xl backdrop-blur-md rounded-xl px-3.5 py-1.5 text-center whitespace-nowrap min-w-[80px]">
+                        <span className="block font-bold text-xs tracking-wide text-neutral-100 flex items-center justify-center gap-1.5">
+                          <span
+                            className="w-2 h-2 rounded-full shrink-0"
+                            style={{ backgroundColor: brandColor }}
+                          />
+                          {skill}
+                        </span>
+                        <span className="block text-[10px] font-mono text-[#C3E41D] mt-0.5">
+                          {meta?.category || "Skill"}
+                        </span>
+                      </div>
+                      {/* Downward triangle arrow */}
+                      <div className="w-2 h-2 rotate-45 -mt-1 bg-neutral-950/95 dark:bg-neutral-900/95 border-r border-b border-neutral-700/80 dark:border-neutral-700" />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
 
             {/* Seamless Duplicated Sequence (Hidden from screen readers for accessibility) */}
@@ -309,15 +399,55 @@ export const SkillsSection: React.FC = () => {
               aria-hidden="true"
               className="flex items-center gap-4 sm:gap-6 pr-4 sm:pr-6 shrink-0"
             >
-              {MARQUEE_SKILLS.map((skill, idx) => (
-                <div
-                  key={`marquee-dup-${idx}`}
-                  className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200/90 dark:border-neutral-800 text-xs sm:text-sm font-medium text-neutral-800 dark:text-neutral-200 shadow-sm transition-colors duration-200 hover:border-[#5c7003] dark:hover:border-[#C3E41D] hover:text-[#5c7003] dark:hover:text-[#C3E41D]"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#5c7003] dark:bg-[#C3E41D] opacity-80" />
-                  <span>{skill}</span>
-                </div>
-              ))}
+              {MARQUEE_SKILLS.map((skill, idx) => {
+                const itemKey = `mq-dup-${idx}-${skill}`;
+                const isHovered = hoveredSkillKey === itemKey;
+                const meta = SKILLS_DATA[skill];
+                const brandColor = meta?.brandColor || "#C3E41D";
+
+                return (
+                  <div
+                    key={itemKey}
+                    tabIndex={-1}
+                    onMouseEnter={() => setHoveredSkillKey(itemKey)}
+                    onMouseLeave={() => setHoveredSkillKey(null)}
+                    style={{
+                      boxShadow: isHovered
+                        ? `0 12px 28px ${brandColor}38, 0 0 16px ${brandColor}28`
+                        : undefined,
+                      borderColor: isHovered ? brandColor : undefined,
+                    }}
+                    className={`skill-tile ${isHovered ? "is-hovered" : ""} flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/95 dark:bg-neutral-900/95 border border-neutral-200/90 dark:border-neutral-800 shadow-sm cursor-pointer`}
+                  >
+                    {/* Official Tech Logo */}
+                    <SkillIcon
+                      name={skill}
+                      className="w-7 h-7 sm:w-8 sm:h-8 transition-transform duration-300"
+                    />
+
+                    {/* Floating Tooltip */}
+                    <div
+                      role="tooltip"
+                      className="skill-tooltip flex flex-col items-center"
+                    >
+                      <div className="bg-neutral-950/95 dark:bg-neutral-900/95 text-white border border-neutral-700/80 dark:border-neutral-700 shadow-2xl backdrop-blur-md rounded-xl px-3.5 py-1.5 text-center whitespace-nowrap min-w-[80px]">
+                        <span className="block font-bold text-xs tracking-wide text-neutral-100 flex items-center justify-center gap-1.5">
+                          <span
+                            className="w-2 h-2 rounded-full shrink-0"
+                            style={{ backgroundColor: brandColor }}
+                          />
+                          {skill}
+                        </span>
+                        <span className="block text-[10px] font-mono text-[#C3E41D] mt-0.5">
+                          {meta?.category || "Skill"}
+                        </span>
+                      </div>
+                      {/* Downward triangle arrow */}
+                      <div className="w-2 h-2 rotate-45 -mt-1 bg-neutral-950/95 dark:bg-neutral-900/95 border-r border-b border-neutral-700/80 dark:border-neutral-700" />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

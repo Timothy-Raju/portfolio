@@ -87,3 +87,35 @@ body {
     justify-content: center;
   }
 }
+
+/* Interactive Skill Tiles & Tooltips */
+.skill-tile {
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.skill-tile:hover {
+  transform: translateY(-4px) scale(1.08);
+  z-index: 40;
+}
+
+.skill-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 50;
+  white-space: nowrap;
+}
+
+.skill-tile:hover .skill-tooltip,
+.skill-tile:focus-visible .skill-tooltip,
+.skill-tile:focus-within .skill-tooltip,
+.skill-tile.is-hovered .skill-tooltip {
+  opacity: 1 !important;
+  transform: translateX(-50%) translateY(0) scale(1) !important;
+}
+
