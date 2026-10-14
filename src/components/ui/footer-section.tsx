@@ -174,7 +174,7 @@ export const FooterSection: React.FC = () => {
       ref={footerRef}
       id="footer"
       aria-label="Site Footer"
-      className="relative w-full pt-16 sm:pt-24 pb-8 bg-neutral-100 dark:bg-black text-neutral-900 dark:text-neutral-100 transition-colors duration-500 overflow-hidden border-t border-neutral-200/80 dark:border-neutral-900"
+      className="relative w-full pt-10 sm:pt-14 pb-8 bg-neutral-100 dark:bg-black text-neutral-900 dark:text-neutral-100 transition-colors duration-500 overflow-hidden border-t border-neutral-200/80 dark:border-neutral-900"
     >
       {/* Background Ambient Glows & Grid */}
       <div
@@ -184,25 +184,53 @@ export const FooterSection: React.FC = () => {
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#C3E41D_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
       {/* ============================================================== */}
-      {/* A. Continuous Moving Marquee                                  */}
+      {/* A. Continuous Moving Marquee (Subtle -3.5° Tilt & Blurred Edges)*/}
       {/* ============================================================== */}
-      <div className="relative w-full overflow-hidden mb-12 sm:mb-16 select-none opacity-80 hover:opacity-100 transition-opacity">
-        <div className="flex w-max animate-marquee py-2.5 border-y border-neutral-300/60 dark:border-neutral-800/80 bg-neutral-200/40 dark:bg-neutral-900/40 backdrop-blur-xs">
-          {/* Repeat twice for seamless infinite loop */}
-          {[0, 1].map((copyIndex) => (
-            <div key={copyIndex} className="flex items-center gap-8 px-4 shrink-0">
-              {MARQUEE_PHRASES.map((phrase, i) => (
-                <React.Fragment key={`${copyIndex}-${i}`}>
-                  <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-neutral-600 dark:text-neutral-400 font-semibold whitespace-nowrap">
-                    {phrase}
-                  </span>
-                  <span className="text-[#5c7003] dark:text-[#C3E41D] text-xs select-none">
-                    ✦
-                  </span>
-                </React.Fragment>
-              ))}
-            </div>
-          ))}
+      <div className="relative w-full overflow-hidden py-3 sm:py-5 mb-8 sm:mb-12 select-none opacity-90 hover:opacity-100 transition-opacity">
+        {/* Left Boundary Blur & Fade Overlay */}
+        <div
+          aria-hidden="true"
+          className="absolute left-0 top-0 bottom-0 w-24 sm:w-48 z-20 pointer-events-none bg-gradient-to-r from-neutral-100 dark:from-black via-neutral-100/80 dark:via-black/80 to-transparent backdrop-blur-[2px]"
+        />
+
+        {/* Right Boundary Blur & Fade Overlay */}
+        <div
+          aria-hidden="true"
+          className="absolute right-0 top-0 bottom-0 w-24 sm:w-48 z-20 pointer-events-none bg-gradient-to-l from-neutral-100 dark:from-black via-neutral-100/80 dark:via-black/80 to-transparent backdrop-blur-[2px]"
+        />
+
+        {/* Tilted wrapper: holds the subtle -3.5° rotation with edge mask */}
+        <div
+          style={{
+            transform: "rotate(-3.5deg) scale(1.08)",
+            transformOrigin: "center center",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+            maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+          }}
+          className="w-full flex items-center justify-center"
+        >
+          {/* Scrolling track: holds the translateX marquee animation */}
+          <div className="flex w-max animate-marquee py-2.5 sm:py-3 border-y border-neutral-300/80 dark:border-neutral-800 bg-neutral-200/70 dark:bg-neutral-900/70 backdrop-blur-md shadow-xs">
+            {/* Two identical halves, each with 3 full cycles of phrases for a 100% gapless continuous loop */}
+            {[0, 1].map((copyIndex) => (
+              <div key={copyIndex} className="flex items-center gap-8 px-4 shrink-0">
+                {[0, 1, 2].map((cycleIdx) => (
+                  <React.Fragment key={`${copyIndex}-${cycleIdx}`}>
+                    {MARQUEE_PHRASES.map((phrase, i) => (
+                      <React.Fragment key={`${copyIndex}-${cycleIdx}-${i}`}>
+                        <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-neutral-800 dark:text-neutral-200 font-semibold whitespace-nowrap">
+                          {phrase}
+                        </span>
+                        <span className="text-[#5c7003] dark:text-[#C3E41D] text-xs select-none">
+                          ✦
+                        </span>
+                      </React.Fragment>
+                    ))}
+                  </React.Fragment>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -339,7 +367,7 @@ export const FooterSection: React.FC = () => {
           }
         }
         .animate-marquee {
-          animation: marqueeScroll 28s linear infinite;
+          animation: marqueeScroll 50s linear infinite;
         }
         @media (prefers-reduced-motion: reduce) {
           .animate-marquee {
