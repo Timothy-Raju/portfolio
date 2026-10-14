@@ -548,14 +548,14 @@ export const ContactSection: React.FC = () => {
       className="relative w-full py-16 sm:py-24 bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 transition-colors duration-500 overflow-hidden"
     >
       <div className="w-full max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
-        {/* Equal-Height Two-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
+        {/* Natural Two-Column Layout (No artificial stretching) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* ======================================================== */}
-          {/* LEFT COLUMN: Clean open contact details + Rotating Hemisphere */}
+          {/* LEFT COLUMN: Contact Details + Hemisphere right underneath */}
           {/* ======================================================== */}
-          <div className="flex flex-col justify-between h-full">
+          <div className="flex flex-col space-y-4">
             {/* Top Info Area */}
-            <div className="space-y-6 pt-2">
+            <div className="space-y-5 pt-1">
               <div>
                 <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-950 dark:text-white mb-2">
                   Get in touch
@@ -566,7 +566,7 @@ export const ContactSection: React.FC = () => {
               </div>
 
               {/* Contact Channels (Clean icon buttons + text, no enclosing box) */}
-              <div className="space-y-3.5 pt-2">
+              <div className="space-y-3 pt-1">
                 {/* Email */}
                 <div className="flex items-center gap-3.5 group">
                   <div className="w-10 h-10 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-400 group-hover:text-neutral-950 dark:group-hover:text-white group-hover:border-neutral-400 dark:group-hover:border-neutral-700 flex items-center justify-center shrink-0 shadow-xs transition-colors">
@@ -582,7 +582,7 @@ export const ContactSection: React.FC = () => {
                     type="button"
                     onClick={() => copyToClipboard("rajupalanki1037@gmail.com", "email")}
                     title="Copy email address"
-                    className="p-1.5 rounded-lg text-neutral-500 hover:text-black dark:hover:text-white transition-colors"
+                    className="p-1.5 rounded-lg text-neutral-500 hover:text-black dark:hover:text-white transition-colors cursor-pointer"
                   >
                     {copiedEmail ? (
                       <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
@@ -619,7 +619,7 @@ export const ContactSection: React.FC = () => {
                     type="button"
                     onClick={() => copyToClipboard("+917416199466", "phone")}
                     title="Copy phone number"
-                    className="p-1.5 rounded-lg text-neutral-500 hover:text-black dark:hover:text-white transition-colors"
+                    className="p-1.5 rounded-lg text-neutral-500 hover:text-black dark:hover:text-white transition-colors cursor-pointer"
                   >
                     {copiedPhone ? (
                       <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
@@ -641,17 +641,17 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Rotating Hemisphere (Moved up so the entire top hemisphere is clearly visible) */}
-            <div className="mt-4 pt-2">
+            {/* Rotating Hemisphere: Moved right up, snug and close to the contact info */}
+            <div className="-mt-1 sm:mt-0">
               <HemisphereGlobe />
             </div>
           </div>
 
           {/* ======================================================== */}
-          {/* RIGHT COLUMN: Form Card (Sleek in Light & Dark Mode)      */}
+          {/* RIGHT COLUMN: Form Card (Natural height, no stretching)    */}
           {/* ======================================================== */}
-          <div className="h-full flex flex-col justify-center">
-            <div className="h-full p-6 sm:p-9 rounded-3xl bg-white dark:bg-[#111113] border border-neutral-200/90 dark:border-neutral-800/90 shadow-xl dark:shadow-2xl flex flex-col justify-between transition-colors">
+          <div>
+            <div className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#111113] border border-neutral-200/90 dark:border-neutral-800/90 shadow-xl dark:shadow-2xl transition-colors">
               <div>
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold tracking-tight text-neutral-950 dark:text-white mb-1.5">
