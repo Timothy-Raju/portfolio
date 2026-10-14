@@ -149,7 +149,7 @@ export const SkillsSection: React.FC = () => {
     <section
       id="skills"
       aria-label="Skills & Technologies"
-      className="relative w-full py-24 sm:py-32 bg-white dark:bg-black text-neutral-900 dark:text-neutral-100 transition-colors duration-500 overflow-hidden"
+      className="relative w-full py-24 sm:py-32 bg-white dark:bg-black text-neutral-900 dark:text-neutral-100 transition-colors duration-500 overflow-hidden scroll-mt-20 sm:scroll-mt-24"
     >
       {/* Background Accent Gradients */}
       <div

@@ -545,7 +545,7 @@ export const ContactSection: React.FC = () => {
     <section
       id="contact"
       aria-label="Contact Section"
-      className="relative w-full py-16 sm:py-24 bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 transition-colors duration-500 overflow-hidden"
+      className="relative w-full py-16 sm:py-24 bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 transition-colors duration-500 overflow-hidden scroll-mt-20 sm:scroll-mt-24"
     >
       <div className="w-full max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
         {/* Section Header (Horizontally aligned on top of contact info and form) */}

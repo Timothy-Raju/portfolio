@@ -378,7 +378,7 @@ export const CertificationsSection: React.FC = () => {
       id="certifications"
       ref={sectionRef}
       aria-label="Certifications"
-      className="relative w-full py-12 sm:py-16 md:py-20 bg-neutral-50 dark:bg-black text-neutral-900 dark:text-neutral-100 transition-colors duration-500 overflow-hidden"
+      className="relative w-full py-12 sm:py-16 md:py-20 bg-neutral-50 dark:bg-black text-neutral-900 dark:text-neutral-100 transition-colors duration-500 overflow-hidden scroll-mt-20 sm:scroll-mt-24"
     >
       {/* Subtle Ambient Glow */}
       <div

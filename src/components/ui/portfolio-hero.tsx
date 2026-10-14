@@ -101,7 +101,7 @@ export default function Component({
   tagline = "Turning ideas into tools that work.",
   avatarUrl = "/profile.png",
   menuItems = [
-    { label: "HOME", href: "#", highlight: true },
+    { label: "HOME", href: "#home", highlight: true },
     { label: "ABOUT", href: "#about" },
     { label: "PROJECTS", href: "#projects" },
     { label: "EDUCATION", href: "#education" },
@@ -147,8 +147,36 @@ export default function Component({
     }
   };
 
+  // Fast, instant-response smooth navigation handler
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+
+    if (href === "#" || href === "#home") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      history.pushState(null, "", window.location.pathname);
+      return;
+    }
+
+    const id = href.replace(/^#/, "");
+    const element = document.getElementById(id);
+    if (element) {
+      const navOffset = 80;
+      const targetY = Math.max(0, element.getBoundingClientRect().top + window.pageYOffset - navOffset);
+      window.scrollTo({
+        top: targetY,
+        behavior: "smooth",
+      });
+      history.pushState(null, "", href);
+    }
+  };
+
   return (
     <div 
+      id="home"
       className="min-h-screen text-foreground transition-colors relative overflow-hidden select-none"
       style={{
         backgroundColor: isDark ? "hsl(0 0% 0%)" : "hsl(0 0% 98%)",
@@ -181,7 +209,7 @@ export default function Component({
             {isMenuOpen && (
               <div
                 ref={menuRef}
-                className="absolute top-full left-0 w-[200px] md:w-[240px] border border-neutral-800/40 shadow-2xl mt-2 ml-2 p-4 rounded-xl z-[100] backdrop-blur-md"
+                className="absolute top-full left-0 w-[200px] md:w-[240px] border border-neutral-800/40 shadow-2xl mt-2 ml-2 p-3 sm:p-4 rounded-2xl z-[100] backdrop-blur-xl animate-in fade-in-0 zoom-in-95 duration-200"
                 style={{
                   backgroundColor: isDark ? "rgba(10, 10, 10, 0.95)" : "rgba(250, 250, 250, 0.95)",
                 }}
@@ -190,7 +218,7 @@ export default function Component({
                   <a
                     key={item.label}
                     href={item.href}
-                    className="block text-lg md:text-xl font-bold tracking-tight py-1.5 px-2 cursor-pointer transition-colors duration-300 rounded"
+                    className="block text-base sm:text-lg md:text-xl font-bold tracking-tight py-2 px-3 cursor-pointer transition-all duration-200 rounded-lg hover:translate-x-1"
                     style={{
                       color: item.highlight ? "#C3E41D" : isDark ? "hsl(0 0% 100%)" : "hsl(0 0% 10%)",
                     }}
@@ -200,7 +228,7 @@ export default function Component({
                     onMouseLeave={(e) => {
                       e.currentTarget.style.color = item.highlight ? "#C3E41D" : (isDark ? "hsl(0 0% 100%)" : "hsl(0 0% 10%)");
                     }}
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={(e) => handleNavClick(e, item.href)}
                   >
                     {item.label}
                   </a>
