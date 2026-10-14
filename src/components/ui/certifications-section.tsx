@@ -34,8 +34,8 @@ const CERTIFICATIONS: CertificationItem[] = [
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#FF9900_1px,transparent_1px)] [background-size:10px_10px]" />
         
         <div className="relative z-10 flex flex-col items-center">
-          <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-xl bg-[#FF9900]/15 border border-[#FF9900]/40 flex items-center justify-center mb-2 shadow-[0_0_20px_rgba(255,153,0,0.25)]">
-            <svg viewBox="0 0 48 48" className="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#FF9900]/15 border border-[#FF9900]/40 flex items-center justify-center mb-2 shadow-[0_0_20px_rgba(255,153,0,0.25)]">
+            <svg viewBox="0 0 48 48" className="w-7 h-7 sm:w-8 sm:h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="6" y="8" width="16" height="14" rx="2" stroke="#FF9900" strokeWidth="2" fill="#FF9900" fillOpacity="0.2" />
               <rect x="26" y="8" width="16" height="14" rx="2" stroke="#FF9900" strokeWidth="2" fill="#FF9900" fillOpacity="0.2" />
               <rect x="16" y="26" width="16" height="14" rx="2" stroke="#FF9900" strokeWidth="2" fill="#FF9900" fillOpacity="0.3" />
@@ -43,7 +43,7 @@ const CERTIFICATIONS: CertificationItem[] = [
               <circle cx="24" cy="33" r="2" fill="#FF9900" />
             </svg>
           </div>
-          <span className="text-[10px] font-mono tracking-widest text-[#FF9900] uppercase font-bold">
+          <span className="text-[9px] sm:text-[10px] font-mono tracking-widest text-[#FF9900] uppercase font-bold">
             ARCHITECT ASSOCIATE
           </span>
           <span className="text-[11px] font-sans font-semibold text-neutral-300">
@@ -67,8 +67,8 @@ const CERTIFICATIONS: CertificationItem[] = [
         <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-[#00A4E4]/15 blur-xl pointer-events-none" />
         
         <div className="relative z-10 flex flex-col items-center">
-          <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-xl bg-[#00A4E4]/15 border border-[#00A4E4]/40 flex items-center justify-center mb-2 shadow-[0_0_20px_rgba(0,164,228,0.25)]">
-            <svg viewBox="0 0 48 48" className="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#00A4E4]/15 border border-[#00A4E4]/40 flex items-center justify-center mb-2 shadow-[0_0_20px_rgba(0,164,228,0.25)]">
+            <svg viewBox="0 0 48 48" className="w-7 h-7 sm:w-8 sm:h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M14 30C10.7 30 8 27.3 8 24C8 20.9 10.3 18.4 13.4 18.1C14.7 13.4 19 10 24 10C30 10 35 14.5 35.8 20.3C38.8 20.8 41 23.4 41 26.5C41 30.1 38.1 33 34.5 33H14"
                 stroke="#00A4E4"
@@ -79,7 +79,7 @@ const CERTIFICATIONS: CertificationItem[] = [
               <path d="M24 22V36M19 31L24 36L29 31" stroke="#00A4E4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
-          <span className="text-[10px] font-mono tracking-widest text-[#00A4E4] uppercase font-bold">
+          <span className="text-[9px] sm:text-[10px] font-mono tracking-widest text-[#00A4E4] uppercase font-bold">
             CLOUD PRACTITIONER
           </span>
           <span className="text-[11px] font-sans font-semibold text-neutral-300">
@@ -102,8 +102,8 @@ const CERTIFICATIONS: CertificationItem[] = [
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#C74634_1px,transparent_1px)] [background-size:12px_12px]" />
 
         <div className="relative z-10 flex flex-col items-center">
-          <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-xl bg-[#C74634]/15 border border-[#C74634]/40 flex items-center justify-center mb-2 shadow-[0_0_20px_rgba(199,70,52,0.25)]">
-            <svg viewBox="0 0 48 48" className="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#C74634]/15 border border-[#C74634]/40 flex items-center justify-center mb-2 shadow-[0_0_20px_rgba(199,70,52,0.25)]">
+            <svg viewBox="0 0 48 48" className="w-7 h-7 sm:w-8 sm:h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="24" cy="14" r="3" fill="#C74634" />
               <circle cx="12" cy="30" r="3" fill="#A855F7" />
               <circle cx="36" cy="30" r="3" fill="#EC4899" />
@@ -115,7 +115,7 @@ const CERTIFICATIONS: CertificationItem[] = [
               <circle cx="24" cy="25" r="1.5" fill="#FFFFFF" />
             </svg>
           </div>
-          <span className="text-[10px] font-mono tracking-widest text-[#E06D53] uppercase font-bold">
+          <span className="text-[9px] sm:text-[10px] font-mono tracking-widest text-[#E06D53] uppercase font-bold">
             GENERATIVE AI
           </span>
           <span className="text-[11px] font-sans font-semibold text-neutral-300">
@@ -138,15 +138,15 @@ const CERTIFICATIONS: CertificationItem[] = [
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#10B981_1px,transparent_1px)] [background-size:10px_10px]" />
 
         <div className="relative z-10 flex flex-col items-center">
-          <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-xl bg-[#10B981]/15 border border-[#10B981]/40 flex items-center justify-center mb-2 shadow-[0_0_20px_rgba(16,185,129,0.25)]">
-            <svg viewBox="0 0 48 48" className="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#10B981]/15 border border-[#10B981]/40 flex items-center justify-center mb-2 shadow-[0_0_20px_rgba(16,185,129,0.25)]">
+            <svg viewBox="0 0 48 48" className="w-7 h-7 sm:w-8 sm:h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M24 8L38 15L24 22L10 15L24 8Z" stroke="#61DAFB" strokeWidth="2" fill="#61DAFB" fillOpacity="0.2" />
               <path d="M10 22L24 29L38 22" stroke="#10B981" strokeWidth="2" strokeLinecap="round" />
               <path d="M10 29L24 36L38 29" stroke="#8CC84B" strokeWidth="2" strokeLinecap="round" />
               <circle cx="24" cy="22" r="1.5" fill="#FFFFFF" />
             </svg>
           </div>
-          <span className="text-[10px] font-mono tracking-widest text-[#10B981] uppercase font-bold">
+          <span className="text-[9px] sm:text-[10px] font-mono tracking-widest text-[#10B981] uppercase font-bold">
             MERN FULL STACK
           </span>
           <span className="text-[11px] font-sans font-semibold text-neutral-300">
@@ -161,15 +161,19 @@ const CERTIFICATIONS: CertificationItem[] = [
 export const CertificationsSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-  const [dragStartX, setDragStartX] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
-  const [dragDistance, setDragDistance] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [windAngle, setWindAngle] = useState(0);
 
   const sectionRef = useRef<HTMLElement>(null);
   const carouselTrackRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  const isPointerDownRef = useRef(false);
+  const pointerStartPos = useRef({ x: 0, y: 0 });
+  const hasMovedRef = useRef(false);
+
   const lastMouseX = useRef(0);
   const lastMouseTime = useRef(Date.now());
   const targetWindRef = useRef(0);
@@ -225,7 +229,7 @@ export const CertificationsSection: React.FC = () => {
     };
   }, [handleKeyDown]);
 
-  // Restrained Autoplay (pauses on hover, drag, hidden tab, reduced motion)
+  // Autoplay (pauses on hover, drag, hidden tab, reduced motion)
   useEffect(() => {
     if (prefersReducedMotion || isHovered || isDragging) return;
 
@@ -239,8 +243,6 @@ export const CertificationsSection: React.FC = () => {
   }, [isHovered, isDragging, prefersReducedMotion]);
 
   // Wind & Clothesline Physics Loop
-  // When cursor moves, target wind swings cards in opposite direction of movement.
-  // Spring physics smoothly damps the swinging motion back to rest.
   useEffect(() => {
     if (prefersReducedMotion) return;
 
@@ -251,16 +253,13 @@ export const CertificationsSection: React.FC = () => {
       if (!isRunning) return;
       time += 0.02;
 
-      // Spring damping physics
       const springK = 0.14;
       const damping = 0.85;
       const force = (targetWindRef.current - currentWindRef.current) * springK;
       currentWindRef.current = (currentWindRef.current + force) * damping;
 
-      // Decay target wind smoothly back to 0
       targetWindRef.current *= 0.88;
 
-      // Idle ambient breeze wave when cards are idle
       const ambientBreeze = Math.sin(time) * 1.2;
       setWindAngle(currentWindRef.current + ambientBreeze);
 
@@ -282,8 +281,6 @@ export const CertificationsSection: React.FC = () => {
     const dt = Math.max(1, now - lastMouseTime.current);
     const dx = e.clientX - lastMouseX.current;
 
-    // Moving mouse to the right causes wind blowing cards to the left (negative angle)
-    // Moving mouse to the left causes wind blowing cards to the right (positive angle)
     const velocity = (dx / dt) * 16;
     const impulse = -Math.max(-14, Math.min(14, velocity * 0.45));
 
@@ -292,69 +289,89 @@ export const CertificationsSection: React.FC = () => {
     lastMouseTime.current = now;
   };
 
-  // Pointer drag controls
+  // Pointer drag controls with clear threshold so clicks always register
   const handlePointerDown = (e: React.PointerEvent) => {
-    setIsDragging(true);
-    setDragStartX(e.clientX);
+    isPointerDownRef.current = true;
+    hasMovedRef.current = false;
+    pointerStartPos.current = { x: e.clientX, y: e.clientY };
     setDragOffset(0);
-    setDragDistance(0);
-    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
   };
 
   const handlePointerMove = (e: React.PointerEvent) => {
-    if (!isDragging) return;
-    const diff = e.clientX - dragStartX;
-    setDragOffset(diff);
-    setDragDistance(Math.abs(diff));
+    if (!isPointerDownRef.current) return;
+    const diff = e.clientX - pointerStartPos.current.x;
 
-    // Dragging causes opposite tilt momentum
-    targetWindRef.current = -diff * 0.08;
+    if (!hasMovedRef.current && Math.abs(diff) > 8) {
+      hasMovedRef.current = true;
+      setIsDragging(true);
+      try {
+        (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+      } catch {
+        // Ignore
+      }
+    }
+
+    if (hasMovedRef.current) {
+      setDragOffset(diff);
+      targetWindRef.current = -diff * 0.08;
+    }
   };
 
   const handlePointerUp = (e: React.PointerEvent) => {
-    if (!isDragging) return;
-    setIsDragging(false);
-    try {
-      (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
-    } catch {
-      // Ignore
-    }
+    if (!isPointerDownRef.current) return;
+    isPointerDownRef.current = false;
 
-    if (dragOffset > 60) {
-      setActiveIndex((prev) => (prev > 0 ? prev - 1 : CERTIFICATIONS.length - 1));
-      targetWindRef.current = 8;
-    } else if (dragOffset < -60) {
-      setActiveIndex((prev) => (prev + 1) % CERTIFICATIONS.length);
-      targetWindRef.current = -8;
+    if (hasMovedRef.current) {
+      setIsDragging(false);
+      try {
+        (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
+      } catch {
+        // Ignore
+      }
+
+      if (dragOffset > 60) {
+        setActiveIndex((prev) => (prev > 0 ? prev - 1 : CERTIFICATIONS.length - 1));
+        targetWindRef.current = 8;
+      } else if (dragOffset < -60) {
+        setActiveIndex((prev) => (prev + 1) % CERTIFICATIONS.length);
+        targetWindRef.current = -8;
+      }
     }
     setDragOffset(0);
+    hasMovedRef.current = false;
+  };
+
+  const selectCard = (index: number) => {
+    setActiveIndex(index);
+    const step = index - activeIndex;
+    targetWindRef.current = -step * 6;
+    cardRefs.current[index]?.focus();
   };
 
   const goToPrev = () => {
-    setActiveIndex((prev) => (prev > 0 ? prev - 1 : CERTIFICATIONS.length - 1));
+    setActiveIndex((prev) => {
+      const nextIdx = prev > 0 ? prev - 1 : CERTIFICATIONS.length - 1;
+      cardRefs.current[nextIdx]?.focus();
+      return nextIdx;
+    });
     targetWindRef.current = 9;
   };
 
   const goToNext = () => {
-    setActiveIndex((prev) => (prev + 1) % CERTIFICATIONS.length);
+    setActiveIndex((prev) => {
+      const nextIdx = (prev + 1) % CERTIFICATIONS.length;
+      cardRefs.current[nextIdx]?.focus();
+      return nextIdx;
+    });
     targetWindRef.current = -9;
   };
 
-  const handleCardClick = (index: number) => {
-    // Only center card if user clicked rather than dragged
-    if (dragDistance < 10) {
-      const step = index - activeIndex;
-      targetWindRef.current = -step * 5;
-      setActiveIndex(index);
-    }
-  };
-
-  // Spacing and sizing constants
-  // Cards are 240px wide, spaced at 320px for clear breathing room
-  const CARD_SPACING = 310;
+  // Dimensions & Catenary Sag Parameters
+  // Cards are 220px wide (reduced 10%), spaced at 300px
+  const CARD_SPACING = 300;
   const HALF_WIDTH = 550;
-  const ROPE_SAG = 26; // Catenary sag depth in pixels
-  const ROPE_BASE_Y = 22; // Rope height at edges
+  const ROPE_SAG = 26;
+  const ROPE_BASE_Y = 24;
 
   return (
     <section
@@ -397,63 +414,43 @@ export const CertificationsSection: React.FC = () => {
         {/* Polaroid Clothesline Carousel Container */}
         <TimelineContent animationNum={3} className="w-full">
           <div
-            className="relative w-full rounded-2xl sm:rounded-3xl bg-neutral-100/60 dark:bg-neutral-900/30 border border-neutral-200/80 dark:border-neutral-800/70 backdrop-blur-md px-3 sm:px-6 pt-5 pb-5 select-none overflow-hidden shadow-sm"
+            className="relative w-full rounded-2xl sm:rounded-3xl bg-neutral-100/70 dark:bg-neutral-900/50 border border-neutral-200/90 dark:border-neutral-800 backdrop-blur-md px-3 sm:px-6 pt-5 pb-5 select-none overflow-hidden shadow-sm"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onMouseMove={handleMouseMove}
           >
-            {/* Hanging Rope (A continuous curved string spanning the full container width) */}
+            {/* Hanging Rope (Continuous curved string spanning the container) */}
             <div className="absolute top-0 left-0 right-0 h-28 pointer-events-none z-10">
               <svg
                 viewBox="0 0 1100 80"
                 preserveAspectRatio="none"
                 className="w-full h-full overflow-visible"
               >
-                {/* Authentic Earthen Twine String */}
+                {/* Earthen Twine String */}
                 <path
-                  d="M 0 22 Q 550 74 1100 22"
+                  d="M 0 24 Q 550 76 1100 24"
                   fill="none"
                   stroke="#9E8D77"
-                  strokeWidth="2.4"
+                  strokeWidth="2.5"
                   strokeLinecap="round"
-                  className="dark:stroke-[#786958]"
+                  className="dark:stroke-[#8C7B68]"
                 />
-                {/* Delicate rope highlight */}
+                {/* Rope highlight */}
                 <path
-                  d="M 0 21.5 Q 550 73.5 1100 21.5"
+                  d="M 0 23.5 Q 550 75.5 1100 23.5"
                   fill="none"
                   stroke="#C7BBAA"
                   strokeWidth="0.8"
                   strokeOpacity="0.6"
-                  className="dark:stroke-[#9E8E7C] dark:stroke-opacity-40"
+                  className="dark:stroke-[#B5A593] dark:stroke-opacity-40"
                 />
               </svg>
             </div>
 
-            {/* Left Navigation Arrow (Vertically aligned with the cards) */}
-            <button
-              type="button"
-              onClick={goToPrev}
-              aria-label="Previous certification"
-              className="absolute left-2 sm:left-4 top-[48%] -translate-y-1/2 z-40 w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center bg-white/90 dark:bg-neutral-800/90 border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-200 hover:bg-[#C3E41D] hover:text-black dark:hover:bg-[#C3E41D] dark:hover:text-black hover:border-[#C3E41D] transition-all duration-200 shadow-md hover:scale-105 active:scale-95 cursor-pointer backdrop-blur-xs"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-
-            {/* Right Navigation Arrow (Vertically aligned with the cards) */}
-            <button
-              type="button"
-              onClick={goToNext}
-              aria-label="Next certification"
-              className="absolute right-2 sm:right-4 top-[48%] -translate-y-1/2 z-40 w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center bg-white/90 dark:bg-neutral-800/90 border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-200 hover:bg-[#C3E41D] hover:text-black dark:hover:bg-[#C3E41D] dark:hover:text-black hover:border-[#C3E41D] transition-all duration-200 shadow-md hover:scale-105 active:scale-95 cursor-pointer backdrop-blur-xs"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-
             {/* Draggable Hanging Clothesline Track */}
             <div
               ref={carouselTrackRef}
-              className="relative w-full h-[320px] sm:h-[350px] flex items-center justify-center cursor-grab active:cursor-grabbing touch-pan-y"
+              className="relative w-full h-[340px] sm:h-[370px] flex items-center justify-center cursor-grab active:cursor-grabbing touch-pan-y"
               onPointerDown={handlePointerDown}
               onPointerMove={handlePointerMove}
               onPointerUp={handlePointerUp}
@@ -465,100 +462,151 @@ export const CertificationsSection: React.FC = () => {
                 const positionOffset = index - activeIndex;
                 const isActive = index === activeIndex;
 
-                // Horizontal position relative to center
                 const xOffset = positionOffset * CARD_SPACING + dragOffset;
 
-                // Mathematical catenary sag: the clip height matches the exact rope curve
-                // Parabolic sag equation: Y = ropeBaseY + sag * (1 - (x / halfWidth)^2)
+                // Mathematical catenary sag: clip Contact Point matches the rope
                 const normalizedX = Math.max(-1, Math.min(1, xOffset / HALF_WIDTH));
                 const ropeY = ROPE_BASE_Y + ROPE_SAG * (1 - normalizedX * normalizedX);
 
-                // Natural resting angle + dynamic wind tilt + propagation delay across clothes
                 const baseRestAngle = [-2.2, 1.8, -1.5, 2.0][index % 4];
-                // Adjacent cards follow wind with a slight chain-reaction propagation factor
                 const propagation = 1 - Math.min(0.5, Math.abs(positionOffset) * 0.15);
                 const currentTilt = prefersReducedMotion
                   ? 0
                   : baseRestAngle + windAngle * propagation + (isDragging ? -dragOffset * 0.04 : 0);
 
                 const scale = isActive ? 1.0 : 0.88;
-                const opacity = Math.abs(positionOffset) <= 1.5 ? (isActive ? 1 : 0.65) : 0.2;
+                // High contrast visibility in dark mode for side cards
+                const opacity = Math.abs(positionOffset) <= 1 ? (isActive ? 1 : 0.82) : 0.65;
                 const zIndex = isActive ? 30 : 20 - Math.abs(positionOffset);
 
+                // Card is positioned with its top edge 24px below the rope
+                // The clip's top contacts the rope at ropeY, and its bottom (44px later) clamps the card
+                const cardTopY = ropeY + 24;
+
                 return (
-                  <div
+                  <button
                     key={cert.id}
-                    onClick={() => handleCardClick(index)}
+                    ref={(el) => {
+                      cardRefs.current[index] = el;
+                    }}
+                    type="button"
+                    onClick={() => selectCard(index)}
+                    aria-label={`Select ${cert.name}`}
                     style={{
-                      transform: `translateX(${xOffset}px) translateY(${ropeY}px) scale(${scale}) rotate(${currentTilt}deg)`,
-                      transformOrigin: "50% 0px", // Pivots right at the clothespin attachment point!
+                      transform: `translateX(${xOffset}px) translateY(${cardTopY}px) scale(${scale}) rotate(${currentTilt}deg)`,
+                      transformOrigin: "50% -24px", // Rotates around the rope clamp point!
                       opacity: Math.abs(positionOffset) > 2.2 ? 0 : opacity,
                       zIndex,
                       transition: isDragging
                         ? "none"
-                        : "transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.4s ease",
+                        : "transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.4s ease, border-color 0.3s ease",
                       cursor: "pointer",
                     }}
-                    className={`absolute top-0 w-[220px] sm:w-[245px] p-2.5 pb-4 bg-[#FAF8F5] dark:bg-[#1A1A1D] rounded-xs shadow-[0_10px_25px_rgba(0,0,0,0.14)] dark:shadow-[0_16px_36px_rgba(0,0,0,0.65)] border transition-all duration-300 group ${
+                    className={`absolute top-0 w-[215px] sm:w-[225px] p-2.5 pb-5 rounded-xs transition-all duration-300 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C3E41D] ${
+                      /* Distinct, elevated card styling with crisp dark mode contrast */
                       isActive
-                        ? "border-[#C3E41D]/90 ring-2 ring-[#C3E41D]/40 shadow-xl"
-                        : "border-neutral-300/80 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-700"
+                        ? "bg-[#FAF8F5] dark:bg-[#2A2A32] border-2 border-[#C3E41D] dark:border-[#C3E41D] ring-2 ring-[#C3E41D]/40 shadow-xl dark:shadow-[0_0_25px_rgba(195,228,29,0.25)]"
+                        : "bg-[#F7F5F0] dark:bg-[#24242A] border-2 border-neutral-300/90 dark:border-neutral-600/90 hover:border-neutral-400 dark:hover:border-neutral-400 shadow-md dark:shadow-[0_12px_30px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.06)]"
                     }`}
                   >
-                    {/* Clothespin / Wooden Laundry Peg attached directly onto the rope & card */}
+                    {/* Clothespin / Laundry Peg (+20% height = 44px, -20% width = 11px) */}
+                    {/* Clamps rope at top end and card at bottom end */}
                     <div
-                      className="absolute -top-[16px] left-1/2 -translate-x-1/2 w-3.5 h-9 z-30 select-none pointer-events-none drop-shadow-md"
+                      className="absolute -top-[24px] left-1/2 -translate-x-1/2 w-[11px] h-[44px] z-30 select-none pointer-events-none drop-shadow-md"
                       aria-hidden="true"
                     >
                       {/* Wooden Peg Body */}
-                      <div className="w-full h-full relative bg-gradient-to-r from-[#D7A168] via-[#F2CFA6] to-[#BF8850] dark:from-[#A87645] dark:via-[#C4925C] dark:to-[#8F5E2F] rounded-[2px] shadow-[0_1px_3px_rgba(0,0,0,0.35)]">
+                      <div className="w-full h-full relative bg-gradient-to-r from-[#D7A168] via-[#F2CFA6] to-[#BF8850] dark:from-[#A87645] dark:via-[#C4925C] dark:to-[#8F5E2F] rounded-[2px] shadow-[0_1px_4px_rgba(0,0,0,0.4)]">
                         {/* Top split between clothespin handles */}
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-3 bg-[#784A20]/60 dark:bg-black/60" />
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-3.5 bg-[#784A20]/60 dark:bg-black/60" />
+
+                        {/* Top notch where clip contacts the rope */}
+                        <div className="absolute top-[8px] left-0 right-0 h-[2.5px] bg-black/20 dark:bg-black/40" />
 
                         {/* Metallic Spring Clamp in the middle */}
-                        <div className="absolute top-[12px] -left-[1.5px] -right-[1.5px] h-[5px] bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-400 dark:from-neutral-600 dark:via-neutral-300 dark:to-neutral-600 rounded-xs shadow-[0_1px_1px_rgba(0,0,0,0.4)] border-[0.5px] border-neutral-500/50" />
+                        <div className="absolute top-[17px] -left-[1.5px] -right-[1.5px] h-[5px] bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-400 dark:from-neutral-600 dark:via-neutral-300 dark:to-neutral-600 rounded-xs shadow-[0_1px_1px_rgba(0,0,0,0.4)] border-[0.5px] border-neutral-500/50" />
 
-                        {/* Rope notch indication (Rope passes right through here!) */}
-                        <div className="absolute top-[16px] left-0 right-0 h-[3px] bg-black/15 dark:bg-black/30 pointer-events-none" />
-
-                        {/* Bottom jaw slot pinching the Polaroid card */}
-                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1px] h-3 bg-[#784A20]/60 dark:bg-black/60" />
+                        {/* Bottom jaw slot pinching the top of the Polaroid card */}
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1px] h-4 bg-[#784A20]/60 dark:bg-black/60" />
                       </div>
                     </div>
 
-                    {/* Polaroid Photo Frame Window */}
-                    <div className="w-full aspect-[4/3] rounded-xs overflow-hidden relative shadow-inner bg-neutral-900 border border-neutral-300/40 dark:border-neutral-700/50">
+                    {/* Polaroid Photo Frame Window (+10% height) */}
+                    <div className="w-full h-[155px] sm:h-[165px] rounded-xs overflow-hidden relative shadow-inner bg-neutral-900 border border-neutral-300/60 dark:border-neutral-700/70">
                       {cert.renderVisual()}
                     </div>
 
-                    {/* Polaroid Chin Caption (Handwritten / Classic Serif title like reference) */}
-                    <div className="pt-2.5 px-1 text-center">
-                      <p className="text-xs sm:text-sm font-serif italic text-neutral-800 dark:text-neutral-200 tracking-tight truncate">
+                    {/* Polaroid Chin Caption */}
+                    <div className="pt-3 px-1 text-center">
+                      <p className="text-xs sm:text-sm font-serif italic text-neutral-800 dark:text-neutral-100 tracking-tight truncate">
                         {cert.shortName}
                       </p>
                     </div>
-                  </div>
+                  </button>
                 );
               })}
             </div>
 
-            {/* Active Certification Name & Small Direct Link Icon */}
-            {/* Positioned right below the cards with minimal gap */}
-            <div className="mt-2 sm:mt-3 pt-3 flex items-center justify-center gap-2.5 px-4 text-center">
-              <h3 className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-neutral-900 dark:text-white">
-                {activeCert.name}
-              </h3>
+            {/* Bottom Controls Bar: Left Active Title & Link | Right Indicator Dots & Nav Buttons */}
+            <div className="mt-3 pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-neutral-200/80 dark:border-neutral-800/80">
+              {/* Left: Active Certification Title with Direct Link Icon */}
+              <div className="flex items-center gap-2.5 min-w-0">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-neutral-950 dark:text-white truncate">
+                  {activeCert.name}
+                </h3>
 
-              <a
-                href={activeCert.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={`Open certificate for ${activeCert.name}`}
-                aria-label={`Open certificate for ${activeCert.name}`}
-                className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-neutral-200/80 hover:bg-[#C3E41D] dark:bg-neutral-800 dark:hover:bg-[#C3E41D] text-neutral-700 hover:text-black dark:text-neutral-300 dark:hover:text-black transition-all duration-200 hover:scale-110 active:scale-95 shadow-xs cursor-pointer shrink-0"
-              >
-                <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              </a>
+                <a
+                  href={activeCert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={`Open certificate for ${activeCert.name}`}
+                  aria-label={`Open certificate for ${activeCert.name}`}
+                  className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-neutral-200/80 hover:bg-[#C3E41D] dark:bg-neutral-800 dark:hover:bg-[#C3E41D] text-neutral-700 hover:text-black dark:text-neutral-300 dark:hover:text-black transition-all duration-200 hover:scale-110 active:scale-95 shadow-xs cursor-pointer shrink-0"
+                >
+                  <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                </a>
+              </div>
+
+              {/* Right: Dots and Navigation Arrow Buttons Together */}
+              <div className="flex items-center gap-4 shrink-0 self-end sm:self-auto">
+                {/* Indicator Dots */}
+                <div className="flex items-center gap-1.5" role="tablist" aria-label="Certification slides">
+                  {CERTIFICATIONS.map((item, idx) => (
+                    <button
+                      key={`dot-${item.id}`}
+                      type="button"
+                      onClick={() => selectCard(idx)}
+                      aria-label={`Go to ${item.name}`}
+                      className={`transition-all duration-300 rounded-full cursor-pointer ${
+                        idx === activeIndex
+                          ? "w-6 h-2 bg-[#5c7003] dark:bg-[#C3E41D]"
+                          : "w-2 h-2 bg-neutral-300 dark:bg-neutral-700 hover:bg-neutral-400 dark:hover:bg-neutral-500"
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                {/* Navigation Buttons (< and > together on the bottom right) */}
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={goToPrev}
+                    aria-label="Previous certification"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-200 hover:bg-[#C3E41D] hover:text-black dark:hover:bg-[#C3E41D] dark:hover:text-black hover:border-[#C3E41D] transition-all duration-200 shadow-sm hover:scale-105 active:scale-95 cursor-pointer"
+                  >
+                    <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={goToNext}
+                    aria-label="Next certification"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-200 hover:bg-[#C3E41D] hover:text-black dark:hover:bg-[#C3E41D] dark:hover:text-black hover:border-[#C3E41D] transition-all duration-200 shadow-sm hover:scale-105 active:scale-95 cursor-pointer"
+                  >
+                    <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </TimelineContent>
