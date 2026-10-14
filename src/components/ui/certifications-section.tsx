@@ -479,9 +479,9 @@ export const CertificationsSection: React.FC = () => {
                 const opacity = Math.abs(positionOffset) <= 1 ? (isActive ? 1 : 0.82) : 0.65;
                 const zIndex = isActive ? 30 : 20 - Math.abs(positionOffset);
 
-                // Card is positioned with its top edge 24px below the rope
-                // The clip's top contacts the rope at ropeY, and its bottom (44px later) clamps the card
-                const cardTopY = ropeY + 24;
+                // Card is positioned so the clip's bottom jaw just contacts the top border
+                // without penetrating down into the card body (clip sits between rope and card)
+                const cardTopY = ropeY + 34;
 
                 return (
                   <button
@@ -494,7 +494,7 @@ export const CertificationsSection: React.FC = () => {
                     aria-label={`Select ${cert.name}`}
                     style={{
                       transform: `translateX(${xOffset}px) translateY(${cardTopY}px) scale(${scale}) rotate(${currentTilt}deg)`,
-                      transformOrigin: "50% -24px", // Rotates around the rope clamp point!
+                      transformOrigin: "50% -34px", // Rotates around the rope clamp point!
                       opacity: Math.abs(positionOffset) > 2.2 ? 0 : opacity,
                       zIndex,
                       transition: isDragging
@@ -510,9 +510,9 @@ export const CertificationsSection: React.FC = () => {
                     }`}
                   >
                     {/* Clothespin / Laundry Peg (+20% height = 44px, -20% width = 11px) */}
-                    {/* Clamps rope at top end and card at bottom end */}
+                    {/* Suspended between rope and card: just contacts the card's top edge without penetrating */}
                     <div
-                      className="absolute -top-[24px] left-1/2 -translate-x-1/2 w-[11px] h-[44px] z-30 select-none pointer-events-none drop-shadow-md"
+                      className="absolute -top-[42px] left-1/2 -translate-x-1/2 w-[11px] h-[44px] z-30 select-none pointer-events-none drop-shadow-md"
                       aria-hidden="true"
                     >
                       {/* Wooden Peg Body */}
@@ -526,8 +526,8 @@ export const CertificationsSection: React.FC = () => {
                         {/* Metallic Spring Clamp in the middle */}
                         <div className="absolute top-[17px] -left-[1.5px] -right-[1.5px] h-[5px] bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-400 dark:from-neutral-600 dark:via-neutral-300 dark:to-neutral-600 rounded-xs shadow-[0_1px_1px_rgba(0,0,0,0.4)] border-[0.5px] border-neutral-500/50" />
 
-                        {/* Bottom jaw slot pinching the top of the Polaroid card */}
-                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1px] h-4 bg-[#784A20]/60 dark:bg-black/60" />
+                        {/* Bottom jaw slot that kisses/contacts the card edge */}
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1px] h-3 bg-[#784A20]/60 dark:bg-black/60" />
                       </div>
                     </div>
 
