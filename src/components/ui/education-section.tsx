@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { GraduationCap, BookOpen, School, Sparkles, Award, MapPin } from "lucide-react";
 import { TimelineContent } from "./timeline-content";
+import { TiltCard } from "./tilt-card";
 
 export interface EducationItem {
   id: string;
@@ -182,14 +183,11 @@ export const EducationSection: React.FC = () => {
                     <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
 
-                  {/* Education Card */}
-                  <div
-                    tabIndex={0}
-                    className={`relative rounded-2xl border transition-all duration-300 p-6 sm:p-7 backdrop-blur-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C3E41D] ${
-                      item.isFeatured
-                        ? "border-[#5c7003]/30 dark:border-[#C3E41D]/40 bg-white/95 dark:bg-neutral-950/80 shadow-md dark:shadow-[0_8px_30px_rgba(195,228,29,0.12)] hover:shadow-xl dark:hover:shadow-[0_12px_40px_rgba(195,228,29,0.2)] hover:-translate-y-0.5"
-                        : "border-neutral-200/90 dark:border-neutral-800/80 bg-white/70 dark:bg-neutral-950/60 shadow-sm dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-md hover:border-[#5c7003]/30 dark:hover:border-[#C3E41D]/30 hover:-translate-y-0.5"
-                    }`}
+                  {/* Education Card with 3D Tilt & Gradient Sweep */}
+                  <TiltCard
+                    borderRadius="rounded-2xl"
+                    innerRadius="rounded-[15px]"
+                    innerClassName="bg-white/95 dark:bg-neutral-950/90 backdrop-blur-xl p-6 sm:p-7 shadow-md dark:shadow-[0_12px_40px_rgba(0,0,0,0.6)]"
                   >
                     {/* Header Row: Badge & Score */}
                     <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
@@ -253,7 +251,7 @@ export const EducationSection: React.FC = () => {
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </TiltCard>
                 </TimelineContent>
               );
             })}

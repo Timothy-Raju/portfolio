@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { VerticalCutReveal } from "./vertical-cut-reveal";
 import { TimelineContent } from "./timeline-content";
+import { TiltCard } from "./tilt-card";
 
 // Brand SVG Icons
 const LinkedinIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
@@ -229,7 +230,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
               <TimelineContent animationNum={3}>
                 <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-2">
                   {/* Stat 1: CGPA */}
-                  <div className="group relative rounded-2xl border border-neutral-200 dark:border-neutral-800/90 bg-white/80 dark:bg-neutral-950/70 p-6 sm:p-7 backdrop-blur-md shadow-sm dark:shadow-none transition-all duration-300 hover:border-[#5c7003]/40 dark:hover:border-[#C3E41D]/50 hover:bg-neutral-100/60 dark:hover:bg-neutral-900/50">
+                  <TiltCard
+                    borderRadius="rounded-2xl"
+                    innerRadius="rounded-[15px]"
+                    innerClassName="p-6 sm:p-7 bg-white/95 dark:bg-neutral-950/90 backdrop-blur-md shadow-sm dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
+                  >
                     <div className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold text-[#5c7003] dark:text-[#C3E41D] tracking-tight">
                       {cgpaValue}
                     </div>
@@ -239,10 +244,14 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                     <div className="mt-1 text-[11px] text-neutral-500 font-sans">
                       Academic Performance
                     </div>
-                  </div>
+                  </TiltCard>
 
                   {/* Stat 2: Projects */}
-                  <div className="group relative rounded-2xl border border-neutral-200 dark:border-neutral-800/90 bg-white/80 dark:bg-neutral-950/70 p-6 sm:p-7 backdrop-blur-md shadow-sm dark:shadow-none transition-all duration-300 hover:border-[#5c7003]/40 dark:hover:border-[#C3E41D]/50 hover:bg-neutral-100/60 dark:hover:bg-neutral-900/50">
+                  <TiltCard
+                    borderRadius="rounded-2xl"
+                    innerRadius="rounded-[15px]"
+                    innerClassName="p-6 sm:p-7 bg-white/95 dark:bg-neutral-950/90 backdrop-blur-md shadow-sm dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
+                  >
                     <div className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold text-[#5c7003] dark:text-[#C3E41D] tracking-tight">
                       {projectsValue}+
                     </div>
@@ -252,14 +261,18 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                     <div className="mt-1 text-[11px] text-neutral-500 font-sans">
                       Built & Experimented
                     </div>
-                  </div>
+                  </TiltCard>
                 </div>
               </TimelineContent>
             </div>
 
             {/* Contact Call to Action */}
             <TimelineContent animationNum={4} className="pt-2">
-              <div className="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800/80 bg-white/80 dark:bg-neutral-950/60 shadow-sm dark:shadow-none backdrop-blur-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-colors duration-300">
+              <TiltCard
+                borderRadius="rounded-2xl"
+                innerRadius="rounded-[15px]"
+                innerClassName="p-6 bg-white/95 dark:bg-neutral-950/90 shadow-sm dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] backdrop-blur-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+              >
                 <div>
                   <div className="text-xs font-mono uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-1">
                     Have an idea or want to collaborate?
@@ -281,14 +294,18 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                   LET'S CONNECT
                   <ArrowUpRight className="w-4 h-4" />
                 </a>
-              </div>
+              </TiltCard>
             </TimelineContent>
           </div>
 
           {/* Right Column: Compact Identity Card & Social Links (5 cols) */}
           <div className="lg:col-span-5">
             <TimelineContent animationNum={3}>
-              <div className="relative rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white/90 dark:bg-neutral-950/80 backdrop-blur-xl p-6 sm:p-8 shadow-xl dark:shadow-2xl hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300">
+              <TiltCard
+                borderRadius="rounded-3xl"
+                innerRadius="rounded-[22px]"
+                innerClassName="bg-white/95 dark:bg-neutral-950/90 backdrop-blur-xl p-6 sm:p-8 shadow-xl dark:shadow-[0_12px_40px_rgba(0,0,0,0.6)]"
+              >
                 {/* Visual Top Bar Accent */}
                 <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#C3E41D] dark:via-[#C3E41D]/40 to-transparent" />
 
@@ -404,7 +421,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                     })}
                   </div>
                 </div>
-              </div>
+              </TiltCard>
             </TimelineContent>
           </div>
         </div>

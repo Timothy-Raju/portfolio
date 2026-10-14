@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { TimelineContent } from "./timeline-content";
 import { SkillIcon, SKILLS_DATA } from "./skill-icons";
+import { TiltCard } from "./tilt-card";
 
 interface SkillItem {
   name: string;
@@ -193,12 +194,12 @@ export const SkillsSection: React.FC = () => {
                 animationNum={3 + (index % 4)}
                 className={isFeatured ? "md:col-span-2 lg:col-span-3" : ""}
               >
-                <div
-                  tabIndex={0}
-                  className="group relative h-full rounded-3xl p-6 sm:p-7 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C3E41D] bg-neutral-50/80 dark:bg-neutral-900/60 backdrop-blur-xl border border-neutral-200/80 dark:border-neutral-800/80 hover:border-[#5c7003]/40 dark:hover:border-[#C3E41D]/40 hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-[0_12px_30px_rgba(0,0,0,0.5)] flex flex-col justify-between"
+                <TiltCard
+                  borderRadius="rounded-3xl"
+                  innerRadius="rounded-[22px]"
+                  className="h-full"
+                  innerClassName="bg-white/95 dark:bg-neutral-950/90 backdrop-blur-xl p-6 sm:p-7 flex flex-col justify-between shadow-md dark:shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
                 >
-                  {/* Subtle Top Border Glow on Hover */}
-                  <div className="absolute top-0 left-0 right-0 h-1 rounded-t-3xl bg-gradient-to-r from-transparent via-[#5c7003]/30 dark:via-[#C3E41D]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   <div>
                     {/* Header Row: Icon + Category Title */}
@@ -304,7 +305,7 @@ export const SkillsSection: React.FC = () => {
                       );
                     })}
                   </div>
-                </div>
+                </TiltCard>
               </TimelineContent>
             );
           })}
