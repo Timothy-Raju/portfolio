@@ -548,101 +548,99 @@ export const ContactSection: React.FC = () => {
       className="relative w-full py-16 sm:py-24 bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 transition-colors duration-500 overflow-hidden"
     >
       <div className="w-full max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
-        {/* Natural Two-Column Layout (No artificial stretching) */}
+        {/* Section Header (Horizontally aligned on top of contact info and form) */}
+        <div className="mb-8 sm:mb-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mb-2.5">
+            Get in touch
+          </h2>
+          <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 font-sans leading-relaxed max-w-2xl">
+            I am currently looking for engineering internships, technical collaborations, and software projects. Drop a message and let&apos;s coordinate!
+          </p>
+        </div>
+
+        {/* Two-Column Layout Underneath */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* ======================================================== */}
-          {/* LEFT COLUMN: Contact Details + Hemisphere right underneath */}
+          {/* LEFT COLUMN: Contact Channels + Rotating Hemisphere        */}
           {/* ======================================================== */}
-          <div className="flex flex-col space-y-4">
-            {/* Top Info Area */}
-            <div className="space-y-5 pt-1">
-              <div>
-                <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-950 dark:text-white mb-2">
-                  Get in touch
-                </h2>
-                <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 font-sans leading-relaxed max-w-md">
-                  I am currently looking for engineering internships, technical collaborations, and software projects. Drop a message and let&apos;s coordinate!
-                </p>
+          <div className="flex flex-col">
+            {/* Contact Channels */}
+            <div className="space-y-3">
+              {/* Email */}
+              <div className="flex items-center gap-3.5 group">
+                <div className="w-10 h-10 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-400 group-hover:text-neutral-950 dark:group-hover:text-white group-hover:border-neutral-400 dark:group-hover:border-neutral-700 flex items-center justify-center shrink-0 shadow-xs transition-colors">
+                  <Mail className="w-4 h-4" />
+                </div>
+                <a
+                  href="mailto:rajupalanki1037@gmail.com"
+                  className="text-sm sm:text-base text-neutral-800 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors break-all font-medium"
+                >
+                  rajupalanki1037@gmail.com
+                </a>
+                <button
+                  type="button"
+                  onClick={() => copyToClipboard("rajupalanki1037@gmail.com", "email")}
+                  title="Copy email address"
+                  className="p-1.5 rounded-lg text-neutral-500 hover:text-black dark:hover:text-white transition-colors cursor-pointer"
+                >
+                  {copiedEmail ? (
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                  ) : (
+                    <Copy className="w-3.5 h-3.5 opacity-60 hover:opacity-100" />
+                  )}
+                </button>
               </div>
 
-              {/* Contact Channels (Clean icon buttons + text, no enclosing box) */}
-              <div className="space-y-3 pt-1">
-                {/* Email */}
-                <div className="flex items-center gap-3.5 group">
-                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-400 group-hover:text-neutral-950 dark:group-hover:text-white group-hover:border-neutral-400 dark:group-hover:border-neutral-700 flex items-center justify-center shrink-0 shadow-xs transition-colors">
-                    <Mail className="w-4 h-4" />
-                  </div>
+              {/* Phone & WhatsApp */}
+              <div className="flex items-center gap-3.5 group">
+                <div className="w-10 h-10 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-400 group-hover:text-neutral-950 dark:group-hover:text-white group-hover:border-neutral-400 dark:group-hover:border-neutral-700 flex items-center justify-center shrink-0 shadow-xs transition-colors">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <div className="flex items-center gap-3">
                   <a
-                    href="mailto:rajupalanki1037@gmail.com"
-                    className="text-sm sm:text-base text-neutral-800 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors break-all font-medium"
+                    href="tel:+917416199466"
+                    className="text-sm sm:text-base text-neutral-800 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors font-medium"
                   >
-                    rajupalanki1037@gmail.com
+                    +91 7416199466
                   </a>
-                  <button
-                    type="button"
-                    onClick={() => copyToClipboard("rajupalanki1037@gmail.com", "email")}
-                    title="Copy email address"
-                    className="p-1.5 rounded-lg text-neutral-500 hover:text-black dark:hover:text-white transition-colors cursor-pointer"
+                  <a
+                    href="https://wa.me/917416199466"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Open WhatsApp chat"
+                    className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/25 hover:bg-emerald-500/20 transition-colors"
                   >
-                    {copiedEmail ? (
-                      <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                    ) : (
-                      <Copy className="w-3.5 h-3.5 opacity-60 hover:opacity-100" />
-                    )}
-                  </button>
+                    <MessageCircle className="w-3 h-3" />
+                    <span>WhatsApp</span>
+                  </a>
                 </div>
+                <button
+                  type="button"
+                  onClick={() => copyToClipboard("+917416199466", "phone")}
+                  title="Copy phone number"
+                  className="p-1.5 rounded-lg text-neutral-500 hover:text-black dark:hover:text-white transition-colors cursor-pointer"
+                >
+                  {copiedPhone ? (
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                  ) : (
+                    <Copy className="w-3.5 h-3.5 opacity-60 hover:opacity-100" />
+                  )}
+                </button>
+              </div>
 
-                {/* Phone & WhatsApp */}
-                <div className="flex items-center gap-3.5 group">
-                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-400 group-hover:text-neutral-950 dark:group-hover:text-white group-hover:border-neutral-400 dark:group-hover:border-neutral-700 flex items-center justify-center shrink-0 shadow-xs transition-colors">
-                    <Phone className="w-4 h-4" />
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <a
-                      href="tel:+917416199466"
-                      className="text-sm sm:text-base text-neutral-800 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors font-medium"
-                    >
-                      +91 7416199466
-                    </a>
-                    <a
-                      href="https://wa.me/917416199466"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="Open WhatsApp chat"
-                      className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/25 hover:bg-emerald-500/20 transition-colors"
-                    >
-                      <MessageCircle className="w-3 h-3" />
-                      <span>WhatsApp</span>
-                    </a>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => copyToClipboard("+917416199466", "phone")}
-                    title="Copy phone number"
-                    className="p-1.5 rounded-lg text-neutral-500 hover:text-black dark:hover:text-white transition-colors cursor-pointer"
-                  >
-                    {copiedPhone ? (
-                      <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                    ) : (
-                      <Copy className="w-3.5 h-3.5 opacity-60 hover:opacity-100" />
-                    )}
-                  </button>
+              {/* Location */}
+              <div className="flex items-center gap-3.5 group">
+                <div className="w-10 h-10 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-400 flex items-center justify-center shrink-0 shadow-xs">
+                  <MapPin className="w-4 h-4" />
                 </div>
-
-                {/* Location */}
-                <div className="flex items-center gap-3.5 group">
-                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-400 flex items-center justify-center shrink-0 shadow-xs">
-                    <MapPin className="w-4 h-4" />
-                  </div>
-                  <span className="text-sm sm:text-base text-neutral-800 dark:text-neutral-300 font-medium">
-                    Palakol, Andhra Pradesh, India
-                  </span>
-                </div>
+                <span className="text-sm sm:text-base text-neutral-800 dark:text-neutral-300 font-medium">
+                  Palakol, Andhra Pradesh, India
+                </span>
               </div>
             </div>
 
-            {/* Rotating Hemisphere: Moved right up, snug and close to the contact info */}
-            <div className="-mt-1 sm:mt-0">
+            {/* Rotating Hemisphere: Snug and close directly underneath contact channels */}
+            <div className="-mt-3 sm:-mt-5">
               <HemisphereGlobe />
             </div>
           </div>
