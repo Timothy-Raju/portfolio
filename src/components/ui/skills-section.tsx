@@ -8,7 +8,6 @@ import {
   Cloud,
   Users,
   Sparkles,
-  ArrowRight,
 } from "lucide-react";
 import { TimelineContent } from "./timeline-content";
 import { SkillIcon, SKILLS_DATA } from "./skill-icons";
@@ -81,7 +80,6 @@ const SKILL_CATEGORIES: SkillCategory[] = [
       { name: "Git" },
       { name: "GitHub" },
       { name: "VS Code" },
-      { name: "Google Colab" },
     ],
   },
   {
@@ -114,7 +112,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   },
 ];
 
-// Complete list of all 26 skills for continuous marquee scrolling
+// Complete list of all skills for continuous marquee scrolling
 const MARQUEE_SKILLS: string[] = [
   "Java",
   "Python",
@@ -130,7 +128,6 @@ const MARQUEE_SKILLS: string[] = [
   "Git",
   "GitHub",
   "VS Code",
-  "Google Colab",
   "Amazon EC2",
   "Amazon S3",
   "AWS IAM",
@@ -312,17 +309,6 @@ export const SkillsSection: React.FC = () => {
             );
           })}
         </div>
-      </div>
-
-      {/* Marquee Section Connector & Label */}
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 mb-4">
-        <TimelineContent animationNum={6}>
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#5c7003] dark:bg-[#C3E41D]" />
-            <span>Continuous Stack Overview • Interactive Logo Stream</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#5c7003] dark:text-[#C3E41D]" />
-          </div>
-        </TimelineContent>
       </div>
 
       {/* Full-width Left-moving Skills Marquee with Interactive Logos & Tooltips */}
