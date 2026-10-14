@@ -107,6 +107,7 @@ export default function Component({
     { label: "EDUCATION", href: "#education" },
     { label: "EXPERIENCE", href: "#experience" },
     { label: "SKILLS", href: "#skills" },
+    { label: "CERTIFICATIONS", href: "#certifications" },
     { label: "CONTACT", href: "#contact" },
   ],
 }: PortfolioHeroProps) {
