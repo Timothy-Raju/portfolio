@@ -101,7 +101,7 @@ body {
 
 .skill-tooltip {
   position: absolute;
-  bottom: calc(100% + 8px);
+  bottom: calc(100% + 6px);
   left: 50%;
   transform: translateX(-50%) translateY(4px) scale(0.95);
   opacity: 0;

@@ -314,7 +314,7 @@ export const SkillsSection: React.FC = () => {
       {/* Full-width Left-moving Skills Marquee with Interactive Logos & Tooltips */}
       <TimelineContent animationNum={7} className="w-full">
         <div
-          className="relative w-full overflow-hidden py-12 sm:py-16 border-y border-neutral-200 dark:border-neutral-800/80 bg-neutral-100/50 dark:bg-neutral-950/40 backdrop-blur-sm group"
+          className="relative w-full overflow-hidden pt-20 pb-10 sm:pt-24 sm:pb-12 border-y border-neutral-200 dark:border-neutral-800/80 bg-neutral-100/50 dark:bg-neutral-950/40 backdrop-blur-sm group"
           style={{
             maskImage:
               "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
