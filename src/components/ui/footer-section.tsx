@@ -184,41 +184,39 @@ export const FooterSection: React.FC = () => {
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#C3E41D_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
       {/* ============================================================== */}
-      {/* A. Continuous Moving Marquee (Subtle -3.5° Tilt & Blurred Edges)*/}
+      {/* A. Continuous Moving Marquee (Full Screen Width from End to End)*/}
       {/* ============================================================== */}
-      <div className="relative w-full overflow-hidden py-3 sm:py-5 mb-8 sm:mb-12 select-none opacity-90 hover:opacity-100 transition-opacity">
-        {/* Left Boundary Blur & Fade Overlay */}
+      <div className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden py-3 sm:py-5 mb-8 sm:mb-12 select-none opacity-95 hover:opacity-100 transition-opacity">
+        {/* Soft edge blur overlays right at the screen boundaries */}
         <div
           aria-hidden="true"
-          className="absolute left-0 top-0 bottom-0 w-24 sm:w-48 z-20 pointer-events-none bg-gradient-to-r from-neutral-100 dark:from-black via-neutral-100/80 dark:via-black/80 to-transparent backdrop-blur-[2px]"
+          className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 z-20 pointer-events-none bg-gradient-to-r from-neutral-100 dark:from-black to-transparent backdrop-blur-[1px]"
         />
-
-        {/* Right Boundary Blur & Fade Overlay */}
         <div
           aria-hidden="true"
-          className="absolute right-0 top-0 bottom-0 w-24 sm:w-48 z-20 pointer-events-none bg-gradient-to-l from-neutral-100 dark:from-black via-neutral-100/80 dark:via-black/80 to-transparent backdrop-blur-[2px]"
+          className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 z-20 pointer-events-none bg-gradient-to-l from-neutral-100 dark:from-black to-transparent backdrop-blur-[1px]"
         />
 
-        {/* Tilted wrapper: holds the subtle -3.5° rotation with edge mask */}
+        {/* Tilted band wrapper: spans full width with -3deg tilt */}
         <div
           style={{
-            transform: "rotate(-3.5deg) scale(1.08)",
+            transform: "rotate(-3deg) scale(1.06)",
             transformOrigin: "center center",
-            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
-            maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 1.5%, black 98.5%, transparent 100%)",
+            maskImage: "linear-gradient(to right, transparent 0%, black 1.5%, black 98.5%, transparent 100%)",
           }}
           className="w-full flex items-center justify-center"
         >
-          {/* Scrolling track: holds the translateX marquee animation */}
-          <div className="flex w-max animate-marquee py-2.5 sm:py-3 border-y border-neutral-300/80 dark:border-neutral-800 bg-neutral-200/70 dark:bg-neutral-900/70 backdrop-blur-md shadow-xs">
-            {/* Two identical halves, each with 3 full cycles of phrases for a 100% gapless continuous loop */}
+          {/* Scrolling track with prominent top and bottom border shadows */}
+          <div className="flex w-max animate-marquee py-3 border-y border-neutral-300 dark:border-neutral-700/80 bg-neutral-200/80 dark:bg-neutral-900/85 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.85)]">
+            {/* Two identical halves, each with 3 full cycles of phrases for a gapless continuous loop */}
             {[0, 1].map((copyIndex) => (
               <div key={copyIndex} className="flex items-center gap-8 px-4 shrink-0">
                 {[0, 1, 2].map((cycleIdx) => (
                   <React.Fragment key={`${copyIndex}-${cycleIdx}`}>
                     {MARQUEE_PHRASES.map((phrase, i) => (
                       <React.Fragment key={`${copyIndex}-${cycleIdx}-${i}`}>
-                        <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-neutral-800 dark:text-neutral-200 font-semibold whitespace-nowrap">
+                        <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-neutral-800 dark:text-neutral-200 font-bold whitespace-nowrap">
                           {phrase}
                         </span>
                         <span className="text-[#5c7003] dark:text-[#C3E41D] text-xs select-none">
@@ -320,7 +318,7 @@ export const FooterSection: React.FC = () => {
               transform: isVisible ? "scale(1)" : "scale(0.95)",
               transition: "opacity 1.2s ease 0.25s, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.25s",
             }}
-            className="text-[15vw] sm:text-[17vw] md:text-[18vw] font-black tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-b from-neutral-900/[0.08] via-neutral-900/[0.03] to-transparent dark:from-white/[0.09] dark:via-white/[0.03] dark:to-transparent"
+            className="text-[10.5vw] sm:text-[12vw] md:text-[12.8vw] font-black tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-b from-neutral-900/[0.08] via-neutral-900/[0.03] to-transparent dark:from-white/[0.09] dark:via-white/[0.03] dark:to-transparent whitespace-nowrap text-center block w-full px-2"
           >
             THIMOTHI
           </span>
